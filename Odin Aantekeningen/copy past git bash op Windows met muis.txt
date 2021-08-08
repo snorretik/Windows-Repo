@@ -1,0 +1,2 @@
+Je kan kopiëren in git bash op Windows met de muis. Makkelijk. Toetsen werken niet, ook niet met shift zo te
+zien.
