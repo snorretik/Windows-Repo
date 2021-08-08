@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+}
+
+#container {
+    width: 575px;
+    margin: auto;
+    background-color: aquamarine;
+    
+    border-color: black;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+
+    padding-bottom: 40px;
+}
+
+p {
+    width: 500px;
+    margin: auto;
+}

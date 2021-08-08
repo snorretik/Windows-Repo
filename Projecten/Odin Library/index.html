@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Library</h1>
+    <div id="container">
+        <button id="addButton">+</button>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBY2-i1ryDUzZJrjAl1c6L9V_KlRpQvF9Q",
+          authDomain: "library-5721d.firebaseapp.com",
+          projectId: "library-5721d",
+          storageBucket: "library-5721d.appspot.com",
+          messagingSenderId: "619130500746",
+          appId: "1:619130500746:web:88819a55cc5bd719c19f73"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="javascript/myscript.js"></script>
+</body>

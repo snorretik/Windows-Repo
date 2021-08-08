@@ -1,0 +1,191 @@
+Odin Factory Functions and Module Pattern:
+
+First, scope:
+
+Lexical Scope or Closure - also referred to as Static Scope.
+Een global variable is toegankelijk voor functies en functies daarin en functies daarin.
+Backwards kan niet:
+Een functie in een functie in een functie en daarin een variabele is niet beschikbaar voor de
+voorliggende functies.
+
+Closure is iets heel anders dan ik dacht...
+Oh fuck... dit is iets heel anders...
+Een korte beschrijving van MDN:
+"A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time."
+Nou... misschien toch simpeler als ik dacht... als ik het nog een keer lees...
+
+Oke dan een stukje over "this":
+één voorbeeld geeft dat HTML5 game voorbeeld aan van "this" opslaan in een variabele om die
+naderhand te gebruiken een laag dieper, weet ik nog wel..
+
+Change scope ("this" in dit geval dus) met .call(), .apply() en .bind()
+call en apply invokes the function
+bind niet... "geweldig, schijnbaar"
+
+Module pattern
+Is wat simpeler lijkt het. Maar word nog verder behandelt.
+Je kan voor private functions een underscore gebruiken vòòr de naam. Dus zo:
+var _privateMethod = function () { };
+
+---
+
+Factory function is een functie die een object returned.
+
+Dit is op Odin zelf:
+This pattern is great because it allows you to pick and choose which functions you want to include in your new object. If you want to go ahead and lump ALL of another object in, you can certainly do that as well with Object.assign (read the docs for that one here)
+like so:
+Object.assign(target, source, source2, source3)
+
+-
+
+Module pattern
+
+(function () {
+	// logic here
+})();
+Je called een IIFE (zo heet dit) door er meteen () achter te zetten. Eerst de functie tussen
+() en dan meteen nog een keer ();
+Doel is obtain data privacy
+
+-
+-
+
+Oke... Dit wordt even veel. Maar het is makkelijk:
+(function () {
+    var foo = "bar";
+
+    // Outputs: "bar"
+    console.log(foo);
+})();
+
+// ReferenceError: foo is not defined
+console.log(foo);
+
+Is hetzelfde als:       	// Of course, you could explicitly name and then invoke a 					// function to achieve the same ends:
+
+function myImmediateFunction () {
+    var foo = "bar";
+
+    // Outputs: "bar"
+    console.log(foo);
+}
+
+myImmediateFunction();
+
+// ReferenceError: foo is not defined
+console.log(foo);
+
+However, this approach has a few downsides. First, it unnecessarily takes up a name in the global namespace, increasing the possibility of name collisions. Second, the intentions of this code aren't as self-documenting as an IIFE. And third, because it is named and isn't self-documenting it might accidentally be invoked more than once.
+
+En je kan arguments passen aan het einde, tussen die extra haakjes:
+var foo = "foo";
+
+(function (innerFoo) {
+    // Outputs: "foo"
+    console.log(innerFoo);
+})(foo);
+
+Dat is het. Voor dit artikel dan.
+
+---
+
+Module Pattern Basics (https://coryrylan.com/blog/javascript-module-pattern-basics)
+
+IIFE (de standaard zoals hierboven ook)
+(function() {
+	'use strict';
+	// your code here
+	// all function and variables are scoped to this function
+})();
+ook good practice om modules in ES5 strict mode te runnen. Strict mode protects from some of
+the more dangerous parts in Javascript.
+
+Exporting module.
+Is hetzelfde maar dan assign je hem toe aan een var myModule (bijv.) dus:
+var myModule = (function() {
+	'use strict';
+})();
+This basically assigns the module to a variable that we can use to call our modules methods.
+
+Public method, to expose this method we return an object with the methods defined:
+var myModule = (function() {
+	'use strict';
+	
+	return {
+		publicMethod: function() {
+			console.log('Hello World!');
+		}
+	};
+})();
+myModule.publicMethod(); // outputs 'Hello World!'
+
+Javascript doesn't have private keyword by default but using closures we cán, namelijk:
+var myModule = (function() {
+  'use strict';
+  
+  var _privateProperty = 'Hello World';
+  
+  function _privateMethod() {
+    console.log(_privateProperty);
+  }
+
+  return {
+    publicMethod: function() {
+      _privateMethod();
+    }
+  };
+})();
+myModule.publicMethod(); // outputs 'Hello World'
+console.log(myModule._privateProperty); // is undefined protected by the module closure
+myModule._privateMethod(); // is TypeError protected by the module closure
+
+Nog een keer omdat javascript geen private keyword heeft is het normaal om private methods
+en properties een _naam voor de naam te geven. Een enkele underscore dus.
+
+Revealing Module Pattern:
+Je returned dus wat je public wilt hebben. Als je dat onderaan doet kan je snel zien onderaan
+wat publicly available is. Hij gebruikt hier niet de shortcut maar het kan wel (name: name,).
+
+Kleine disclaimer dan nog:
+The Module Pattern is not a silver bullet for adding code re-usability to your JavaScript. Using the Module Pattern with Prototypal Inheritance or ES6 Classes can give you a wide range of design patterns with varying pros and cons.
+
+---
+
+Dan... https://dev.to/tomekbuszewski/module-pattern-in-javascript-56jm
+
+iets meegeven:
+const Formatter = (function(doc) {
+	const log = functie
+
+	const makeUppercase = functie
+
+	const writeToDom = functie
+	checken of (doc er is (!!doc) && "querySelector" in doc)
+
+	return {
+	makeUppercase,
+	writeToDom,
+	}
+})(document);
+dus... document onderaan, word doc bovenaan. Waarschijnlijk.
+
+je kan een mock toevoegen.
+maar dat ziet er messy uit...
+maar dan geef je onderaan (document || documentMock) aan.
+
+Dan nog:
+Module pattern is a very common one, and – as you can see – very good at that. I often try to write modules first, then – if needed – classes. 
+
+---
+
+A useful side-effect of encapsulating the inner workings of our programs into objects is namespacing. Namespacing is a technique that is used to avoid naming collisions in our programs.
+
+If all of them were nicely encapsulated inside of an object, then we would have no trouble: calculator.add(), displayController.add(), operatorStack.add().
+
+---
+
+aantekeningen:
+Oke voor factory functions. Je maakt eerst de functie bijv player.
+Dan sla je die op in een variabele, zonder dat je new hoeft te gebruiken.
+Dat komt omdat je returned waarschijnlijk.
+const jeff = player('jeff')

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        const func = (() => {
+            let var1 = 200;
+
+            const calc1 = (a) => var1 * a;
+
+            return {
+                calc1: calc1
+            }
+        })();
+
+        console.log(func.calc1(2));
+        
+    </script>
+</body>

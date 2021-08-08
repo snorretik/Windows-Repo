@@ -1,0 +1,231 @@
+Objecten:
+
+let user = {};
+
+let user = {
+    name: "John",    // belangrijk die komma
+    age: 30
+};
+
+het geheel "name: "John"" wordt een property genoemd (wordt later belangrijk).
+
+user.isAdmin = true;     // beetje vaag voor mij, maakt ie isAdmin aan als key? Antwoord is ja.
+
+delete user.age;
+
+multiword moet gequote (dus als string, zoals: "likes birds": true
+
+als je meerdere key:values in 1 keer zet, tussen de gekromde haakjes dan zet je er komma's tussen en
+niet ; dat, die komt pas na het gekrulde haakje sluiten
+
+soms is er een hangende komma bij de laatste waarde, logisch... zet 'm op voor de volgende key:value
+waartussen een komma moet staan
+
+Je kan een punt notatie gebruiken, of met brackets zoals [] deze. Punt notatie kan soms niet.
+Dus dan switchen we naar brackets.
+
+Je hebt notaties waarin name: name gebruikt wordt. In dat geval kan je gewoon ¨name," zeggen.
+
+keys moeten strings of symbols zijn (symbols komt later). Andere worden omgezet in strings. Dus
+een 0 wordt "0" als string dus. In dat geval werkt zowel:
+alert(obj[0]);    als
+alert(obj["0"]);
+
+alle keys kunnen. Dus ook gereserveerde, zoals for let of return. Behalve een speciale namelijk
+__proto__ "for historical reasons".
+
+Als een property niet bestaat dan returned ie "undefined". Je kan daarop checken met
+=== undefined. Dit kan ook met een speciale operator "in", wat true of false geeft.
+
+Er is ook een for...in loop.
+for (let key in user) {        // key kan ook iets anders heetten. Bijv prop, ook veelgebruikt.
+
+objects zijn in volgorde van dat ze zijn gemaakt. Tenzij het een nummer is. Maar dan kan je een
++ ervoor zetten en dan werkt het wel.
+
+Iets met referenties. Als een object gekopieerd wordt, dan wordt de reference gekopieerd. Niet
+het hele object. Zie het als een deur met een sleutel, je krijgt een tweede sleutel en niet
+een tweede deur mét sleutel.
+Twee apart gecreëerde (lege) objecten zijn NIET gelijk aan elkaar. Ook al hebben ze dezelfde
+inhoud. Terwijl als
+a = {};
+let b = a;
+alert(a == b)     // true, both variables reference the same object
+alert(a === b)    // true
+
+object declared as const CAN be changed
+
+als je een object echt wilt kopieëren dan maak je een lege aan en ga je de hele inhoud na met
+"for in" en neem je het over.
+of je kunt Object.assign daarvoor gebruiken.
+
+En je hebt ook nog zoiets als "deep cloning". Als er een object in een object zit. Daarvoor
+gebruik je de library "lodash", methode heet "_.cloneDeep(obj)".
+
+-------------------------------------
+
+mdn (mozilla) javascript/objects/basics
+
+person.age
+person.name.first
+                // kan ook als
+person['age']
+person['name']['first']
+
+weer een voorbeeld dat je meer met [] kan dan met . notatie.
+
+this, wordt later nog behandeld zeggen ze hier iig.
+
+dingen zoals myString.split(','); zijn ook voorbeelden van methoden, dat is de rede waarom je 
+al vaker de punt notatie hebt gezien. Ook iets als document.createElement('div'); en
+document.querySelector('video'); Ook Array. En Math.
+
+--------------------------------------
+
+Objects en Object Constructors (Odin zelf)
+
+const playerOne = {
+	name: "tim",
+	marker: "X"
+}
+Dit is nog een voorbeeld... gewoon normaal
+
+Object Constructors
+
+function Player(name, marker) {
+	this.name = name
+	this.marker = marker
+}
+Voorbeeld van constructor
+
+Wordt gebruikt door te doen
+const player = new Player('steve', 'X')
+
+---
+
+The Prototype (javascript is sexy.com web.archive)
+
+prototype property
+every function has a prototype property
+primarily used for inheritance all instances of that function
+
+prototype attribute
+an objects prototype attribute points to the object's "parent", the object it inherited
+it's properties from. Also referred to as the prototype object.
+
+constructor
+constructor is wanneer de functie met hoofdletter gemaakt wordt en wordt aangeroepen door new
+
+Object.prototype is the prototype attribute for all objects with new Object() or {}, het is
+de basis als het ware, en Object.prototype inherit van niemand meer
+
+Hier in een voorbeeld is this raar... weet ik niet waar het naartoe wijst. Te vinden op:
+"Demonstration of Inheritance in Javascript."
+De amIOrganic methode, die gebruikt this.isOrganic... maar het zit in de prototype en wijst
+naar de constructor. Beetje vreemd dat ie dat zou doen.
+En showNameAndColor gebruikt this.name en this.color terwijl die nog helemaal niet bekend
+zijn en pas in Fruit aan bod komen.
+Vreemd dat ie flexibeler lijkt dan dat ik logisch vind.
+
+Dan snap ik het voorbeeld met Pete wel.
+
+De rest snap ik wel weer redelijk goed.
+Maar het volgende artikel heeft het ook even over die this. 
+
+---
+
+javascript.info/prototype-inheritance
+
+__proto__
+is getter and setter for prototype
+
+"Writing doesn't use prototype"
+write/delete operations work directly with the object
+snap ik niet helemaal wat hier bedoeld wordt
+maar voor walk, als ie eentje in het object vindt gaat ie niet ook nog zoeken in prototype.
+Alleen als ie 'm niet gevonden krijgt. Dus je kunt overschrijven.
+
+Dan volg ik John Smith gewoon goed. Kunt setters en getters maken blijkbaar. Zie artikel.
+
+-
+
+Dan dus "this". Dit is even belangrijk. This is not affected by prototypes at all.
+So, the setter call admin.fullName= uses admin as this, not user.
+
+Oke, dus het lijkt erop dat This dan altijd de meest recentste is. En niet een prototype.
+alert(rabbit.isSleeping); // true
+alert(animal.isSleeping); // undefined (no such property in the prototype)
+
+Dat modifies rabbit snapte ik niet helemaal, maar zodra ie aangeroepen wordt wordt ie true.
+Dus dat modified 'm dan.
+
+Methods are shared object state is not
+
+---
+
+for in loop
+
+Object.keys(rabbit); // jumps
+
+for(let prop in rabbit) alert(prop); // jumps, then eats
+
+-
+
+for in pakt niet de Object properties (van basis), die zijn enumerable:false.
+
+-
+
+rabbit.hasOwnProperty(prop) is true of false.
+
+---
+
+Dus... oefen opgaven... Had ik al gezien, maar snap ik nu beter.
+
+---
+
+Terug naar Odin, constructors:
+
+-
+
+Maar hier ook weer vreemd, hier is this.name ook beschikbaar in de prototype, terwijl het pas
+genoemd wordt in het object zelf. Zoiets, of misschien maakt dat niet uit. Dat het allebei
+anderen thissen zijn... denk ik...
+
+-
+
+Wanneer prototype te gebruiken:
+If you’re using constructors to make your objects it is best to define functions on the prototype of that object. Doing so means that a single instance of each function will be shared between all of the Student objects. If we declare the function directly in the constructor like we did when they were first introduced that function would be duplicated every time a new Student is created. In this example, that wouldn’t really matter much, but in a project that is creating thousands of objects, it really can make a difference.
+
+-
+
+function Student() {
+}
+
+Student.prototype.sayName = function() {
+  console.log(this.name)
+}
+
+function EighthGrader(name) {
+  this.name = name
+  this.grade = 8
+}
+
+EighthGrader.prototype = Object.create(Student.prototype)
+
+const carl = new EighthGrader("carl")
+carl.sayName() // console.logs "carl"
+carl.grade // 8
+
+Uitleg: Set EigthGrader prototype to a copy of Student.prototype
+EigthGrader.prototype = Studen.prototype
+werkt niet goed, zet 'm letterlijk op hetzelfde ipv een kopie ervan. Dus dan heb je nog een
+voorbeeld waar zowel NinthGrader en EightGrader letterlijk Student.prototype worden. En als
+je dan bij NinthGrader iets veranderd, wordt het ook voor EightGrader zo.
+
+-
+
+Dan het extra artikel en die (duidelijke) video. En dan klaar! Leuk!
+
+Oh het volgende project is eigenlijk heel simpel. Dat is mooi. En het is 16:00 nu en dat had
+ik als tijd om weer even te stoppen en het avondeten... ja... tosti... dat weet ik al. Of
+augurkjes halen bij Jumbo. Weet ik nog niet. Dan kan ik meteen net zo goed boodschappen doen.

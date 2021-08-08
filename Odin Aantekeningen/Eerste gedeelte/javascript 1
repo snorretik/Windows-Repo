@@ -1,0 +1,526 @@
+Javascript
+
+nummers w3schools
+
+Oke het eerste wat ik zie is dat het met var’s gaat.
+var x = 3.14;
+var y = 3;
+
+kan een e gebruiken in een cijfer om nullen voor of achter het cijfer te plaatsen
+var x = 123e5 // 12300000
+var y = 123e-5 // 0.00123
+
+javascript nummers zijn altijd 64bits floating points
+
+nauwkeurig tot op 15 digits
+16 keer een 9 wordt 1 met 16 nullen
+9999999999999999 wordt 10000000000000000
+
+maximum aantal decimalen is 17, maar is niet altijd 100% accuraat
+var x = 0.2 + 0.1; 0.30000000000000004 met 17 digits achter de komma (of punt in dit geval)
+
+om bovenstaande op te lossen kan je vermeningvuldigen en delen.
+var x = (0.2 * 10 + 0.1 * 10) / 10;    // x will be 0.3
+
+de + operator wordt voor zowel optellen als concatenatie gebruikt
+var x = “10”;
+var y = “20”;
+var z = x + y;        // z wordt 1020 (een string dus)
+
+var x = 10;
+var y = “20”;
+var z = x + y;          // z wordt 1020 (string weer)
+
+Je merkt al op dat een regel afgesloten wordt met een semicolon ; dus
+
+var x = 10;
+var y = 20;
+var z = “The result is: “ + x + y;         // dit wordt ook 1020 omdat wordt begonnen met string in var
+
+var x = 10;
+var y = 20;
+var z = “30”;
+var result = x + y + z;           // gaat vaak fout, is 3030 ipv 102030
+
+Op + na veranderd javascript strings automatisch in nummers bij andere operators:
+var x = “100”
+var y = “10”
+var z = x / y;         // z is 10
+
+zo ook bij vermenigvuldiging en aftrekken
+
+alleen bij + niet
+
+NaN (Not a Number)
+var x = 100 /  “Apple”;
+isNaN(x);                             // true
+
+kijk uit voor NaN, als je NaN gebruikt in een berekening wordt het resultaat ook NaN
+var x = NaN;
+var y = 5;
+var z = x + y;           // z is NaN
+
+of het wordt een concatenatie
+var x = NaN;
+var y = “5”;
+var z = x + y;     // z is NaN5 < ----- 5 dus
+
+dit is een beetje vaag
+NaN is a number: typeof NaN returns number:
+typeof NaN;           // returns “number”
+
+Infinity (of -Infinity) is de uitkomst als je een berekening doet buiten het grootst mogelijke nummer
+
+while loop tot Infinity
+
+delen door 0 heeft ook als uitkomst Infinity
+var x = 2 / 0;          // x is Infinity
+var y = -2 / 0;        // y is -Infinity
+
+en weer (zie beetje vaag)
+typeof Infinity;            // geeft terug “number”
+
+als nummers beginnen met 0x dan wordt het als hexadecimaal gezien (van de kleuren)
+var x = 0xFF;             // x is 255
+
+nooit met een 0 beginnen tenzij decimaal nummer, niet onnodig met 0
+sommige versies interpreteren dat als octal
+
+toString(x) voor base 2 tot base 36
+var myNumber = 32;
+myNumber.toString(10);  // returns 32
+myNumber.toString(32);  // returns 10
+myNumber.toString(16);  // returns 20
+myNumber.toString(8);   // returns 40
+myNumber.toString(2);   // returns 100000
+
+nummers kunnen ook objecten zijn
+normaal
+var x = 123;                                 // returns number
+maar
+var y = new Number(123);         // returns object
+
+maar maak geen number objects, het vertraagd alles en het new keyword kan compliceren
+
+
+
+var x = 500;
+var y = new Number(500);    // (x == y) is waar want het is allebei 500
+echter (x === y) is false want x en y zijn niet hetzelfde type
+of erger nog
+var x = new Number(500);
+var y = new Number(500);        // (x == y) is false want objecten kunnen niet vergeleken worden
+ook met (x === y) false
+
+arithmetic
+
++ – * / niks bijzonders
+
+% modulo niks bijzonders
+
+++ 
+-- 
+kan zowel voor als achter een nummer worden gezet
+
+nieuw is de exponentiation
+**
+var x = 5;
+var z = x ** 2;                              // is 25
+kan ook met Math.pow(x, y)
+var x = 5;
+var z = Math.pow(x, 2);              // weer 25
+
+iets over volgorde, gewoon wiskundig hier
+
+staat een hele tabel in over volgordes, daarom heb ik de site gebookmarked
+voor de zekerheid, het is w3schools.com – >javascipt – > JS Arithmetic
+
+----------------------------
+
+mdn basic math in javascript
+
+dus even voor de duidelijkheid, tot nu toe is de + operator bijzonder… dat is wat ik er van herinnerd heb en is een korte samenvatting van dit hele document tot nu toe. Ik moet uitkijken met strings etc…
+
+++
+--
+Kan alleen op variabelen. 4++ kan niet.
+
+En num1++ betekent dat ie eerst de variabele geeft en dan plus doet.
+Als je het er voor zet doet ie eerst ++ en dan geeft de variabele na de berekening
+
+dan simpele
++=
+-=
+*=
+/=
+
+dan even opletten
+=== strict equal (zoals we zagen, ook qua type_
+!== is strict unequal (dus voor de drie)
+dan heb je dus nog
+==
+!=
+en dan de normale
+<
+>
+<=
+>=
+
+in 1 voorbeeld gebruikt ie dus de vergelijker === (drie dus)
+if (btn.textContent === ‘Start machine’) {
+code
+}
+
+---------------------------
+
+javascript.info/operators
+
+Ik snap het al een stuk beter
+
+als je alleen een + gebruikt met 1 cijfer, dan doet ie niks
+maar als je de plus gebruikt op een string dan veranderd die ‘m naar een nummer
+dus dan krijg je
+alert( +apples + +oranges ) eerst de plusjes om om te zetten naar nummers en dan optellen
+en kan dus misschien ook met een – maar + is nog 1 hoger
+
+ketting a = b = c = 2 + 2; gewoon logisch
+
+nog een keer modulo
+en nog een keer exponentiation
+
+nog een keer ++ en --
+gaat ook voor meeste andere operatoren in volgordes
+
+dan heb je nog de 
+AND& OR| XOR^ NOT~ LEFT SHIFT<< RIGHT SHIFT>> ZERO-FILL RIGHT SHIFT>>>
+maar dat is schijnbaar te moeilijk
+
+dan de comma! 
+Dat geldt voor de laatste
+dus (1 + 2, 3 + 4) wordt 7, de drie wordt weggegooid
+
+
+
+zie verder op volgende pagina
+
+
+
+
+
+
+Dan die oefeningen:
+1
+1
+weet ik niet (true + false)
+2
+6
+9px
+$9
+2
+weet ik niet (“4px” – 2)
+Infinity
+“   -9   +5”
+weet ik niet(“    -9   “ -5)
+weet ik niet(null + 1)
+weet ik niet(undefined + 1)
+weet ik niet(“ \t \n” -2)
+
+antwoord was:
+“10”
+-1 (weet niet waarom ik daar 1 had staan)
+1
+goed
+goed
+goed
+$45
+goed
+NaN
+goed
+“    -9    5” (niet de plus!)
+-14 (verrassing, leuk)
+1
+NaN
+-2
+
+Juist nu ben ik er.
+
+------------------------------------------
+
+javascript.info/variables
+
+Er is een strict modus schijnbaar
+“use strict”;        zoals het er nu naar uit ziet
+
+const is een constant logischerwijs
+wordt 1 keer toegewezen en veranderd nooit
+wordt bijvoorbeeld bij kleuren gebruikt COLOR_ORANGE
+er wordt bij const’s die vooraf al bekend zijn hoofdletters gebruikt
+bij sommige const’s zijn die niet bekend maar worden ze maar 1 keer toegewezen dus nog steeds een const, dan is het met normale camelcasing
+
+-----------------------------------------
+
+javascript.info/types
+
+mathematical operations are safe, je krijgt of een NaN of een Infinity. Zoiets kan gewoon makkelijk. Toch zijn die 2 van het type “number” dat is voor later.
+
+BigInt bestaat ook
+Wordt ondersteund door Firefox en Chrome maar niet in Safari/IE/Edge.
+
+Je hebt normale quotes, enkele quotes en speciale quotes zoals die onder de escape toets
+die laatste worden gebruikt als bijvoorbeeld ${naam} in een string wordt gebruikt.
+
+Geen char’s voor enkele tekens
+
+Boolean true en false gewoon als normaal
+
+speciaal type null;
+
+type “undefined” is als een variabele geen waarde heeft gekregen. Kan het ook gewoon typen zoals x = undefined;
+Maar we gebruiken null voor leeg of onbekend en undefined voor checks of variabelen al zijn toegewezen
+
+object type is speciaal, het kan grotere dingen aan ipv alleen strings of alleen nummers
+symbol is ook nog iets maar minder belangrijk of zoiets
+
+dan is er nog een typeof operatoren
+het kan gebruikt worden als operator of als functie
+typeof x
+typeof(x)
+allebei is hetzelfde
+Het geeft terug wat het is, 
+0 number 
+10n bigint
+true boolean
+“foo” string
+Symbol(“id”) symbol
+Math object
+null object
+alert function
+De laatste 3 zijn bijzonder
+Math is built in voor berekeningen, hier is het een voorbeeld van een object en
+null object is fout. Dit is een fout van typeof. Het is een uitzondering een geval apart speciaal dus
+alert is een function, er zijn eigenlijk geen functies maar objecten maar typeof zegt het toch, niet helemaal goed dus maar is handig
+
+-----------------------
+
+MDN(Mozilla) Javascript first steps strings
+
+Met \ kun je characters escapen in een string. ‘I\’ve got no right to take my place...’ Zo dus.
+
+Concatenaten
+Number(myString);
+myNum.toString();
+
+zoals al besproken zijn er speciale quotes `string` waarmee je ${variabelen} kunt invoegen
+dan verander je een string literal in een template literal
+
+ternary operator 
+examScore >= 49 ? ‘yes’ : ‘no’
+
+\n in een string is new line
+
+template literals zijn relatief nieuw en wordt alleen in Explorer niet ondersteund
+
+-------------------------
+
+w3schools.com/js/js_string_methods.asp
+
+var txt = “ABCDEFGHIJKLMNOPQRSTUWVXYZ”;
+var sln = txt.length;
+
+var str = “Please locate where ‘locate’ occurs!”;
+var pos = str.indexOf(“locate”);
+kan ook str.lastIndexOf(“locate”, 15);
+return -1 als niet gevonden wordt
+beide kunnen ook een startpunt meegegeven worden, zoals bij de laatste (15).
+
+.search(“locate”) geeft ook de positie
+die verschilt met indexOf():
+the search() method cannot take a second start position argument.
+the indexOf() method cannot take powerful search values (regular expressions)
+
+.slice(start, end) end not included
+.slice(– 12, – 6) vanaf einde
+.slice(7) vanaf 7 de rest van de string
+.slice(-12) of vanaf het einde, weer
+
+substring() is hetzelfde als slice maar kan geen negatieve waarden meegegeven worden
+ook weer als je maar 1 cijfer meegeeft is het vanaf die positie de hele string
+
+substr() is bijna hetzelfde als slice en substring() maar hierin wordt de lengte aangegeven in het tweede digit
+als je die tweede erbuiten laat is het weer de rest van de string vanaf dat startpunt
+substr() kan wel weer met negatieve waarden
+
+
+
+.replace(“Microsoft”, “W3Schools”);
+veranderd niet de string it is called on. It returns a new string.
+alleen de eerste match
+case-sensitive
+
+case insensitive /i flag
+str.replace(/MICROSOFT/i, “W3Schools”)
+
+om ze allemaal te veranderen ipv alleen de eerste gebruik je de /g tag
+zoals hierboven met i
+
+.toUpperCase() is alles upper case
+toLowerCase() is alles lower
+
+“Hello”.concat(“ “, “World!”);
+Hello World!
+
+All string methods return a new string, they don’t modify the original string
+
+str.trim() removes whitespace from both sides of string
+niet in Explorer 8 or lower, kan replace() dan gebruiken
+
+charAt(nummer)      geeft char op die positie
+
+charCodeAt(nummer) returns unicode of character UTF-16
+var str = “HELLO WORLD”;
+str.charCodeAt(0)                 // returns 72 (voor H dus)
+
+property access
+str[0];         // Returns H
+does not work on explorer 7 or earlier
+makes strings look like arrays (but they are not)
+no character is found, [] returns undefined, while charAt() returns an empty string
+it is read only, str[0] = “A” gives no error but doesn’t work
+
+converting string to array
+.split(,) on commas
+.split( ) on spaces
+.split(|) on pipe
+seperator omitted, whole string in index 0
+seperator "" single characters
+
+
+
+javascript.info/comparison
+
+let op javascript dus strings worden automatisch naar nummers omgezet zo nodig, ook bij > of ==
+“01” == 1    // true dus
+
+true is 1
+false is 0
+
+Boolean(variabele) zet strings weer niet om
+
+0 van false scheiden kun je doen met === ipv ==
+
+null == undefined    // wordt true!
+For maths and other comparisons < > <= >=
+null wordt 0, undefined wordt NaN
+null > 0 false
+null == 0 false
+null >= 0 true (raar)
+
+“2” > “12” true want 2 is groter dan 1, het zijn allebei strings dus er wordt naar de eerste gekeken. Vond ik heel raar.
+
+----------------------------------
+
+W3schools js_if_else.asp
+
+if (condition) {
+code
+}
+else if (condition2) {
+code
+}
+else {
+code
+}
+
+------------------------------------
+
+javascript.info/logical-operators
+
+|| OR
+&& AND
+! NOT
+
+Als eerste || OR, lijkt normaal tot dat:
+let currentUser = null;
+let defaultUser = “John”;
+let name = currentUser || defaultUser || “unnamed”;
+alert( name );
+als john er niet was geweest was het “unnamed” geworden. Dat is anders.
+Je kunt ze dus ook los gebruiken. Maar beter in if statement.
+
+Dan && AND
+first falsy or last one
+ook, kan los gebruikt worden maar if is beter
+
+Dan ! NOT
+best straightforward
+soms wordt !! gebruikt om naar boolean om te zetten
+! heeft hoogste volgorde, dus is als eerste
+
+---------------------------
+
+mdn conditionals
+
+losse if statement, kijk uit (dus zonder else) doet anders misschien beide
+
+nesting gewoon normaal
+
+switch (condition) {
+case 
+break
+default
+
+ternary
+? yes : no
+
+geoefend
+
+------------------------
+
+javascript.info/ifelse
+
+0, “”, null, undefined and NaN, all false
+
+digitalocean
+
+niks bijzonders gewoon beetje hetzelfde
+
+-------------------------
+
+mdn functions
+
+call functions inside functions kan… maar veel bijzonders staat er tot nu toe nog niet.
+
+Functies zonder naam, “anonymous function”, bijvoorbeeld voor een muisklik
+maar beter met naam, zoals:
+function myGreeting() {
+alert(‘hello’);
+}
+
+scope
+
+als er 2 scripts zijn die dezelfde functie hebben qua naam en een zelfde variabele, dan wordt de eerste functie gebruikt en de 2de genegeerd, en je krijgt een error bij de let in script 2.
+
+<script></script> tags voor javascript
+
+scoping werkt gewoon zoals verwacht, maar hetzelfde geldt niet voor for() {} and if() {}
+dat is niet hetzelfde
+
+---------------------------------
+
+mdn return values
+
+return variabeleNaam;
+
+niks bijzonders.
+
+---------------------------------
+
+javascript.info/function-basics
+
+local vòòr global als dezelfde naam wordt gebruikt.
+
+Hier stonden nog 1 regel aantekeningen ongeveer. Heb ik verwijderd… maar misschien dus belangrijk om een keer terug te kijken.
+
+Een functie die niks returned is hetzelfde als undefined
+
+It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side-effect.

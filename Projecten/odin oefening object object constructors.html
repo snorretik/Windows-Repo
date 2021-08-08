@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        function Book(title, author, pages, read) {
+            this.title = title
+            this.author = author
+            this.pages = pages
+            this.read = read
+            this.info = function() {
+                return `${title} by ${author}, ${pages} pages, read ${read}`;
+            }
+        }
+
+        const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+        
+        console.log(theHobbit.info());
+
+        // function Player(name, marker) {
+        //     this.name = name
+        //     this.marker = marker
+        //     this.sayName = function() {
+        //         console.log(name)
+        //     }
+        // }
+    </script>
+</body>

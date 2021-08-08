@@ -1,0 +1,80 @@
+freecodecamp javascript
+
+gebruik let ipv var... maar voor nu dan maar even var...
+
+If you do a mathematical operation on an undefined variable your result will be 
+NaN which means "Not a Number". If you concatenate a string with an undefined 
+variable, you will get a literal string of "undefined".
+
+In een string gebruik \ om te escapen "Niels zei \"Ik leer Javascript!\"".
+
+\'
+\"
+\\
+\n newline
+\r carriage return
+\t tab
+\b word boundary
+\f form feed         zoek op
+
+Het volgende:
+var myStr = "Bob";
+myStr[0] = "J";
+wordt geen Job. Dit kan niet namelijk.
+
+multidimensional array
+is een array in een array
+
+array in array:
+var arr = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+  [[10,11,12], 13, 14]
+];
+arr[3]; // equals [[10,11,12], 13, 14]
+arr[3][0]; // equals [10,11,12]
+arr[3][0][1]; // equals 11
+
+booleans
+true en false gewoon en niet met hoofdletter
+
+javascript zet bij == strings om in nummers en andersom ("type coercion")
+3 == '3'     true
+3 === '3'    false
+
+1 != '1'    // false
+1 != true   // false
+0 != false  // false
+
+>        converteert = true hehe, converteert dus (net als ==)
+>=       converteert ook
+
+switch
+case values worden strict (===) geëvalueerd
+
+switch
+case 1:
+case 2:
+case 3:
+onder elkaar doen voor meerdere cases hetzelfde
+
+delete en dan object[variabele] of object.variabele
+
+.hasOwnProperty(propname)     true of false
+
+JavaScript Object Notation JSON
+
+recursion:
+function sum(arr, n) {
+  // Only change code below this line
+  if (n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+  // Only change code above this line
+}
+
+Nu het laatste, nog wat meer over recursion.
+

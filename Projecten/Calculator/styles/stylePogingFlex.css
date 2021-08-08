@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+#geheel {
+    background-color: white;
+}
+#rekenmachine {
+    background-color: #0F5897;
+        
+    padding: 10px 0px 10px 0px;
+    margin: 100px 0px 0px 0px;
+    
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+
+    width: 250px;
+}
+h1 {
+    background-color: #0F5897;
+    padding: 0px 50px 0px 60px;
+    margin: 0px 0px 0px 0px;
+    color: white;
+    font-weight: 2;    
+}
+.number {
+    padding: 10px;
+    width: 50px;
+}
+.operator {
+    padding: 10px;
+    width: 50px;
+}
+.showRes {
+    position: relative;
+    bottom: 5px;
+}
+#relative {
+    background-color: white;
+
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+    width: 207px;
+    padding: 20px 5px 20px 0px;
+    margin: 0px 0px 10px 20px;
+}
+#container-numbers {
+    flex-direction: column;
+    margin: 20px 0px 0px 20px;
+}
+#zero {
+    width: 50px;
+}
+#decimal {
+    padding: 10px;
+    width: 50px;
+}
+#equals {
+    padding: 10px;
+    width: 50px;
+}
+#clearButton {
+    position: relative;
+    left: 128px;
+    padding: 10px;
+    width: 50px;
+}
+#backspace {
+    position: relative;
+    left: 128px;
+    padding: 10px;
+    width: 50px;
+}
+#stringCalculation {
+    float: right;
+}
+#stringResult {
+    float: right;
+}

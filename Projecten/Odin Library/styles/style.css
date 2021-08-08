@@ -1,0 +1,23 @@
+body {
+    background-color: tan;
+}
+h1 {
+    font-size: 40px;
+    margin: 20px 0px 20px 20px;
+}
+#container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px 300px;
+}
+#addButton {
+    background-color: purple;
+    margin: 20px;
+    font-size: 40px;
+    color: white;
+
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+}

@@ -1,0 +1,103 @@
+html {
+    background-color: white;
+}
+
+body {
+    border-style: solid;
+    height: 95vh;
+    background-color: rgb(212, 243, 255);
+    border-radius: 10px;
+}
+
+header {
+    position: fixed;
+    top: 16px;
+    right: 30px;
+    left: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    border-style: solid;
+    text-align: center;
+    padding: 8px;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+#positieDiv {
+    min-width: 256px;
+    min-height: 475px;
+    position: fixed;
+    top: 122px;
+    bottom: 175px;
+    right: 120px;
+    left: 120px;
+    background-color: rgb(255, 255, 160);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+nav {
+    max-width: 650px;
+    margin-right: auto;
+    margin-left: auto;
+    
+    padding-top: 10px;
+    padding-bottom: 12px;
+
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: solid;
+    border-width: 3px;
+
+    justify-content: center;
+}
+
+nav > a {
+    width: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 650px;
+    height: 550px;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main > h4 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+main > p {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 17px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+footer {
+    position: fixed;
+    right: 30px;
+    left: 30px;
+    bottom: 45px
+}
+
+footer > p {
+    text-align: center;
+    border-style: solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+}

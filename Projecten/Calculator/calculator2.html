@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator 2</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <a id="displayStr"></a><br>
+    <br>
+    <button id="one" class="number">1</button>
+    <button id="two" class="number">2</button>
+    <button id="three" class="number">3</button><br>
+    <button id="four" class="number">4</button>
+    <button id="five" class="number">5</button>
+    <button id="six" class="number">6</button><br>
+    <button id="seven" class="number">7</button>
+    <button id="eight" class="number">8</button>
+    <button id="nine" class="number">9</button><br>
+    <button id="zero" class="number">0</button><br>
+    <button id="symbolPlus" class="operator">+</button>
+    <button id="symbolMinus" class="operator">-</button>
+    <button id="symbolTimes" class="operator">*</button>
+    <button id="symbolDivid" class="operator">/</button><br>
+    <button id="equals">=</button>
+    <button id="clearButton">Clear</button><br>
+    <button id="backspace">Backsp</button>
+    <button id="decimal">.</button>
+    <script>
+        let number = "";
+        let numbArray = [];
+
+        const numbButtons = document.querySelectorAll(".number")
+        numbButtons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                number += `${button.textContent}`
+                showNumber(number);
+            })
+        })
+
+        const opButtons = document.querySelectorAll(".operator")
+        opButtons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                if (number !== "") {
+                    numbArray.push(`${+number}`);
+                    number = "";
+                    numbArray.push(`${button.textContent}`);
+                    showNumber(number);
+                } else {
+                    showNumber("Error! OpButtons")
+                }
+            })
+        })
+
+        const equalsButton = document.querySelector("#equals");
+        equalsButton.addEventListener('click', (e) => {
+            if ((numbArray.length === 0) && (number === "")) {
+                showNumber("nothing");
+            } else if ((numbArray.length === 0) && (number !== "")) {
+                numbArray.push(`${number}`);
+                showNumber(`${numbArray[0]}`);
+            } else if ((numbArray.length === 1) && (typeof +numbArray[0] === "number")) {
+                showNumber("something");
+            } else if (numbArray.length > 1) {
+                
+            } else {
+                showNumber("Error! EqualsButton");
+            }
+        })
+
+        function showNumber(numberShow) {
+            const aElement = document.querySelector("#displayStr")
+            aElement.textContent = numberShow;
+        }
+    </script>
+</body>

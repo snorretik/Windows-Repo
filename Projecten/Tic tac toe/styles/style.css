@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+}
+#gameContainer{
+    background-color: #745372;
+    padding: 0px 15px 25px 20px;
+
+    border-color: rgb(82, 40, 82);
+    border-width: 8px;
+    border-style: solid;
+    border-radius: 20px;
+}
+h1 {
+    color: white;
+}
+#outputString{
+    color: white;
+    
+}
+#displayRoot {
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+    grid-template-rows: 75px 75px 75px;
+    
+}

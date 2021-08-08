@@ -1,0 +1,4 @@
+warning: LF will be replaced by CRLF in kat-en-muis 1.py
+The file will have its original line endings in your working directory
+
+En zo nog een paar keer voor alle py files.

@@ -1,0 +1,152 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Mijn kat en muis spel.</title>
+    <script src="phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+
+    var config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                debug: false
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+
+    var game = new Phaser.Game(config);
+    let player1;
+    let player2;
+    let playLaatstX;
+    let playLinks = false;
+    let play2dood = false;
+    let playPress = false;
+
+    function preload ()
+    {
+        this.load.image('sky', 'assets/sky.png')
+        this.load.image('kat', 'assets/kat-hoofd.png')
+        this.load.image('muis-rechts', 'assets/Muis-rechts.png');
+        this.load.image('muis-rechts-dood', 'assets/Muis-rechts-dood.png');
+        this.load.image('muis-links', 'assets/Muis-links.png');
+        this.load.image('muis-links-dood', 'assets/Muis-links-dood.png');
+    }
+
+    function create ()
+    {
+        this.add.image(400, 300, 'sky');
+        
+        player1 = this.physics.add.sprite(400, 400, 'kat');
+        player2 = this.physics.add.sprite(100, 100, 'muis-rechts');
+
+        player1.setSize(48, 55);
+        player2.setSize(120, 50);
+
+        player1.setCollideWorldBounds(true);
+    }
+
+    function update ()
+    {
+        document.addEventListener('keydown', keyDownHandler, false);
+        document.addEventListener('keyup', keyUpHandler, false);
+
+        document.addEventListener("mousemove", mouseMoveHandler);
+
+        this.physics.add.overlap(player1, player2, function dood() {
+            dodenMuis();
+        })
+
+        let press = false;
+
+        thisExtra = this;
+
+        function mouseMoveHandler(event) {
+            if (play2dood === true) {
+                play2dood = true;
+            } else if (play2dood === false){
+                player2.x = event.clientX;
+                player2.y = event.clientY;
+
+                if (playLaatstX === undefined) {
+                    playLaatstX = event.clientX;
+                } else if (playLaatstX > player2.x) {
+                    player2.setTexture('muis-links');
+                    playLinks = true;
+                } else if (playLaatstX < player2.x) {
+                    player2.setTexture('muis-rechts');
+                    playLinks = false;
+                }
+            }
+
+            playLaatstX = event.clientX;
+        }
+
+        function keyDownHandler(event) {
+            if(event.keyCode == 39) {
+                player1.setVelocityX(120);
+            }
+            else if(event.keyCode == 37) {
+                player1.setVelocityX(-120);
+            }
+            else if(event.keyCode == 40) {
+                player1.setVelocityY(120);
+            }
+            else if(event.keyCode == 38) {
+                player1.setVelocityY(-120);
+            }
+
+            if(event.keyCode == 32) {
+                press = true;
+            }
+        }
+
+        function dodenMuis() {
+            if (playLinks && press) {
+                play2dood = true;
+                player2.setTexture("muis-links-dood");
+            } else if (press) {
+                play2dood = true;
+                player2.setTexture("muis-rechts-dood");
+            }
+        }
+
+        function keyUpHandler(event) {
+            if(event.keyCode == 39) {
+                player1.setVelocityX(0);
+            }
+            else if(event.keyCode == 37) {
+                player1.setVelocityX(0);
+            }
+            else if(event.keyCode == 40) {
+                player1.setVelocityY(0);
+            }
+            else if(event.keyCode == 38) {
+                player1.setVelocityY(0);
+            }
+
+            if (event.keyCode == 32) {
+                press = false;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

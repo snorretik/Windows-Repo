@@ -1,0 +1,346 @@
+github instructions:
+echo "# git-logging-test" >> README.md     // or touch
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:circlingspider/git-logging-test.git
+git push -u origin master
+
+or...
+
+git remote add origin git@github.com:circlingspider/git-logging-test.git
+git push -u origin master
+
+------
+
+git basics:
+git clone git@github.com:USER-NAME/REPOSITORY-NAME.git or...
+git clone https://github.com/user-name/repository-name.git
+
+git push origin master
+
+git add .
+git commit -m "A message description"
+
+git status
+git log
+
+-----
+
+git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository:
+
+git init
+
+git clone https://github.com/libgit2/libgit2 mylibgit    // andere naam, mylibgit
+
+Dan:
+Blank lines or lines starting with # are ignored.
+Standard glob patterns work, and will be applied recursively throughout the entire working tree.
+You can start patterns with a forward slash (/) to avoid recursivity.
+You can end patterns with a forward slash (/) to specify a directory.
+You can negate a pattern by starting it with an exclamation point (!).
+---
+# ignore all .a files
+*.a
+-
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+-
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+-
+# ignore all files in any directory named build
+build/
+-
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+-
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+-
+tip > https://github.com/github/gitignore
+
+git diff                    // uitgebreidere git status
+
+git diff --staged           // compares staged changes to last commit
+or the same:
+git diff --cached
+
+git diff to see what's still unstaged
+git diff --cached to see what you've staged so far, dus in combinatie met...
+
+git difftool			// voor meer visuele weergave in een aantal opties
+git difftool --tool-help	// zie hier de opties die beschikbaar zijn
+
+git config --global core.editor code      // heb ik gedaan, VSCode dus nu
+kan zelfs git commit -v doen, zet diff in code om precies de wijzigingen te zien
+
+git commit -a -m autom. stages every file that is already tracked + message -m
+
+gewoon rm file is "not staged for commit"
+git rm file is "changes to be committed", "deleted PROJECTS.md"
+If you modified the file or had already added it to the staging area, you must 
+force the removal with the -f option.
+
+git rm --cached README to unstage README
+
+git mv file_from file_to     en
+git mv README.md README      registreert ie als "renamed"
+is sneller dan
+mv README.md README
+git rm README.md
+git add README
+eerste is sneller, maar veel doet ie automatisch goed naderhand
+
+----------
+
+git log
+
+git log -p -2                 // -p of --patch en -2 om de laatste 2 te zien
+git log --stat
+
+git log --pretty=oneline
+git log --pretty=short      // short, full en fuller
+
+git log --pretty=format:"%h - %an, %ar : %s"
+apart bestand voor de opties gemaakt
+
+git log --pretty=format:"%h %s" --graph
+
+git log -2 dus
+git log -S function_name
+git log -2 --PATH_TO_FILE
+
+--no-merges
+
+Voorbeeld:
+$ git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
+   --before="2008-11-01" --no-merges -- t/
+5610e3b - Fix testcase failure when extended attributes are in use
+acd3b9e - Enhance hold_lock_file_for_{update,append}() API
+f563754 - demonstrate breakage of detached checkout with symbolic link HEAD
+d1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths
+51a94af - Fix "checkout --track -b newbranch" on detached HEAD
+b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unborn branch
+
+Uit 40.000 commits, this selects 6 of them.
+
+----------
+
+git commit --amend     // direct na commit, alleen message verandert
+
+git commit -m 'Initial commit'
+git add forgotten_file
+git commit --amend
+
+git reset HEAD <file>        // to unstage, staat ook in de beschrijving
+git reset moet je voorzichtig mee zijn, maar je kan er hele nuttige dingen mee
+
+git checkout -- <file>      // to discard changes you've made
+ook heel gevaarlijk, moet het echt zeker weten
+als het echt moet kan er waarschijnlijk ook iets met branches
+
+alles wat committed is kan je ook terug halen, echter alles wat nooit gecommit
+is, zal je waarschijnlijk nooit meer terug zien.
+
+----------
+
+git remote
+
+git remote -v        // show URL's
+
+git clone implicitly adds the origin remote, to add explicitly:
+git remote add <shortname> <url>          // origin for <shortname>, of pb
+
+git fetch pb
+
+git pull        // to automatically fetch and merge
+
+git push <remote> <branch>
+so
+git push origin master
+if it doesn't work you need to fetch someone else first and incorporate it before being allowed to push
+
+git remote show <remote>
+
+git remote rename pb paul
+pb/master is now paul/master
+
+git remote remove paul
+of
+git remote rm paul
+If you want to remove a remote for some reason — you’ve moved the server or are no longer using a particular mirror, or perhaps a contributor isn’t contributing anymore — you can either use git remote remove or git remote rm:
+
+----------
+
+git tag (optional -l or --list)      // to show
+If, however, you’re supplying a wildcard pattern to match tag names, the use of -l or --list is mandatory.
+
+Two tags, lightweight and annotated.
+
+git tag -a v1.4 -m "my version 1.4"   // laat -m eruit en hij opent weer VSCode
+
+git show v1.4
+
+git tag <tagname>     // geen -a -s of -m maar meteen de naam voor lightweight
+git tag v1.4-lw
+git show v1.4-lw      // showt commit
+
+git tag -a v1.2 9fceb02          // naderhand
+
+git push origin <tagname>
+git push origin --tags
+git push <remote> --follow-tags   // only annonated will be pushed
+
+git push <remote> :refs/tags/<tagname>
+of
+git push origin --delete <tagname>
+
+checkout:          // discard changes
+git checkout <tagname>     // detached head state
+dus wil je een branch maken:
+git checkout -b version2 v2.0.0
+ben voorzichtig want version2 branch is een klein beetje anders dan de v2.0.0 tag "since it will move forward with your new changes"
+
+----------
+
+Aliases
+
+Handige shortcuts programmeren
+
+Eén die misschien handig is is:
+git config --global alias.unstage 'reset HEAD --'
+git unstage fileA
+dan hoef je die potentieel gevaarlijke reset niet te typen
+
+Of
+git config --global alias.last 'log -1 HEAD'
+git last    // laat laatste commit zien
+
+kan zelfs buiten Git met !
+
+---------
+
+git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell:
+
+git branch testing
+git checkout testing
+
+git checkout master
+
+git log testing
+git log --all
+
+git checkout -b <newbranchname>     // om meteen naar nieuwe branch te gaan
+
+git checkout master
+git merge hotfix
+
+git branch -d hotfix     // deletes hotfix branch
+
+merge conflicts:
+git status
+unmerged paths
+both modified
+file openen:
+<<<<<<<<<<< ========== >>>>>>>>>>>
+Alles boven de ===jes is 1, alles daaronder 2. Maak daar één van en delete de <<< === >>> symbolen.
+
+git mergetool       // kan ook, kiest dan een tool
+
+Dan kan je vervolgens de commit maken, de merge commit dus, en dan kan je in de
+comments schrijven wat je hebt gedaan om het probleem op te lossen.
+
+--------
+
+git branch
+git branch --merged
+git branch --no-merged
+
+trying to delete an unmerged branch fails, but can be done with capital d (D),
+as is suggested. 
+
+git branch --no-merged master     // checking from other branch
+
+--------
+
+git remote show <remote>
+of
+git ls-remote <remote>
+
+Ik snap hier even heel weinig van... heb ik het idee... maar ik kijk toch maar
+verder. Misschien dat het nog duidelijk wordt.
+
+Heb nog even het kofschip opgezocht. Wat een gezeik zeg. Ik dacht misschien is
+het toch best makkelijk. Maar dan dingen als "het gaat om de klank". En dan de
+g weer niet en ch wel. Zo raar allemaal. X is 's'. Nou goed, ik snap waarom die
+collega van pa gewoon harkt gebruikt en als het een t is ook een t gebruikt in
+voltooide tijd bijvoorbeeld.
+
+git push origin serverfix:serverfix
+
+Ik snap hier echt helemaal niks van...
+Dit moet ik onthouden. Dat ik weet dat ik daar helemaal niks van snap. Remote branches dus.
+
+git branch -vv            // misschien dat dit helpt, kan je doen om informatie
+			   // op te vragen.
+git fetch --all; git branch -vv     // om helemaal up to date te zijn
+
+git push origin --delete serverfix
+
+ik heb een topic gemaakt op Odin. Vraag me af wat voor een reactie ik krijg.
+Misschien dat iemand het toch uit kan leggen. Maar ik snap er dus helemaal niks
+van.
+
+En ook rebasen snap ik maar een heel klein beetje. Ben blij dat dit gedeelte
+over is. Ik heb nog even de Nederlandse versie gelezen, die is misschien iets
+beter te begrijpen. Heb ik ook gebookmarked. Ik kon het iets beter volgen maar
+toch... En helemaal aan het begin wordt een niettemin of nevertheless gebruikt
+die ik totaal niet snap. Nou goed.
+
+---------
+
+Git Tools Rewriting History (git-scm.com)
+
+Je hebt heel veel vrijheid in Git om alles aan te passen en nog te bewerken,
+maar "local". Als je hebt gepusht is het een heel ander verhaal, dan valt er
+nog maar weinig te doen. 
+
+git commit --amend
+
+Als de commit message niet veranderd hoeft te worden kan je:
+git commit --amend --no-edit         gebruiken.
+
+git rebase -i HEAD~3        // change last 3 commit messages
+
+als je een git log doet is het belangrijk om te weten dat ie nu in tegengestelde
+volgorde staan. It lists oldest at the top, because that's the first it will
+replay.
+
+de commit die je wil editen moet je veranderen van pick naar edit
+
+de instructies zeggen hoe je verder moet gaan
+git commit --amend
+git rebase --continue
+
+the nuclear option:
+filter-branch
+
+ipv filter-branch gebruik git-filter-repo, link https://github.com/newren/git-filter-repo
+
+Nog wat extra info over filter-branch. Kan je nog op zoeken als het moet.
+
+-----------
+
+skip reset. Is mogelijk nog nodig. "Reset demystified" dus.
+
+-----------
+
+aantekeningen:
+
+changing origin:
+git remote set-url origin *url github*     // als je van SSH naar url wil gaan bijv.
+
+unstagen van files, allemaal in dit geval, kan nog makkelijker:
+git reset
+ipv HEAD gekloot etc, je kan dan ook nog files specificeren erachter. Maar zonder unstaged ie alles. Wel handig!

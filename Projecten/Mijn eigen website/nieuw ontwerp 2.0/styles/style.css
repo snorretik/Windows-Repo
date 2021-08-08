@@ -1,0 +1,73 @@
+#geheel {
+    position: relative;
+    width: 700px;
+    height: 910px;
+    margin: auto;
+
+    background-color: rgb(212, 243, 255);
+
+    border-style: solid;
+    border-radius: 10px;
+}
+
+header {
+    width: 475px;
+    height: 80px;
+    margin: auto;
+    
+    background-color: aquamarine;
+    
+    text-align: center;
+    
+    border-style: solid;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 350px;
+    height: 30px;
+    margin: auto;
+    padding-top: 6px;
+
+    background-color: rgb(255, 255, 160);
+    
+    text-align: center;
+    
+    border-style: solid;
+}
+
+main {
+    width: 350px;
+    height: 630px;
+    margin: auto;
+    padding-top: 3px;
+
+    background-color: rgb(255, 255, 160);
+    
+    text-align: center;
+    
+    border-style: solid;
+}
+
+main > p {
+    width: 290px;
+    margin: auto;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+
+    width: 475px;
+    margin: auto;
+
+    background-color: aquamarine;
+
+    text-align: center;
+
+    border-style: solid;
+}
