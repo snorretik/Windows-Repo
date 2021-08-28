@@ -1,7 +1,7 @@
 #geheel {
     position: relative;
     width: 850px;
-    height: 910px;
+    height: 1200px;
     margin: auto;
 
     background-color: rgb(212, 243, 255);
@@ -51,7 +51,7 @@ main {
 
 article {
     width: 350px;
-    height: 630px;
+    height: 910px;
     margin-left: auto;
     padding-top: 3px;
 
@@ -68,7 +68,7 @@ article > p {
 }
 
 section {
-    height: 630px;
+    height: 910px;
     width: 145px;
 
     margin-left: 10px;
@@ -80,6 +80,45 @@ section {
     border-style: solid;
 
     text-align: center;
+}
+
+section > span {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#year {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+
+    justify-content: center;
+
+    border-top: solid;
+    border-width: 1px;
+}
+
+#year > p {
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 11px;
+}
+
+button {
+    height: 25px;
+    margin-top: 7px;
+}
+
+#month {
+    padding-bottom: 10px;
+
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+#month > select {
+    width: 98px;
+    margin-top: -2px;
 }
 
 footer {
