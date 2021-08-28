@@ -670,3 +670,13 @@ de body bijvoorbeeld.
 Je moet daarvoor wel de parent op
 position: relative;
 zetten, in mijn geval veranderde dat niks aan de parent zelf maar fixte het wel de footer.
+
+Standaard text is eigenlijk niet voor p, maar voor <span>. Er wordt hier bij het opzoeken ervan letterlijk
+gezegd dat de <span> eigenlijk hetzelfde is in functie als <div>. Die zocht ik idd.
+Bijvoorbeeld, kan het onderdeel van een <p> element zijn dat je anders wilt kleuren bijvoorbeeld. Dus het is
+echt nog "minder" als de gewone <p>. Hij is zelfs daar maar onderdeel van hoogstens. Prima.
+
+Eerste trucje:
+<h4></h4><span>Blog nav</span><h4></h4>
+Dit betekent een deel van de opmaak zoals de ruimtes, van h4 (zowel boven (de eerste), als onder (de
+tweede)), maar niet dikgedrukt. haha.
