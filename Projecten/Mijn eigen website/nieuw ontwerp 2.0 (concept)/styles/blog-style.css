@@ -1,7 +1,7 @@
 #geheel {
     position: relative;
     width: 850px;
-    height: 840px;
+    height: 960px;
     margin: auto;
 
     background-color: rgb(212, 243, 255);
@@ -51,7 +51,7 @@ main {
 
 article {
     width: 350px;
-    height: 555px;
+    height: 685px;
     margin-left: auto;
     padding-top: 3px;
 
@@ -68,7 +68,7 @@ article > p {
 }
 
 section {
-    height: 555px;
+    height: 685px;
     width: 145px;
 
     margin-left: 10px;
@@ -119,6 +119,17 @@ button {
 #month > select {
     width: 98px;
     margin-top: -2px;
+}
+
+#displayList {
+    display: flex;
+    flex-direction: column;
+}
+
+#displayList > a {
+    font-size: 13px;
+
+    margin-top: 6px;
 }
 
 footer {

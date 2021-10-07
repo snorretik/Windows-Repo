@@ -121,6 +121,17 @@ button {
     margin-top: -2px;
 }
 
+#displayList {
+    display: flex;
+    flex-direction: column;
+}
+
+#displayList > a {
+    font-size: 13px;
+
+    margin-top: 6px;
+}
+
 footer {
     position: absolute;
     bottom: 0px;
