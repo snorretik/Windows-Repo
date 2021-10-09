@@ -1,0 +1,223 @@
+Objecten, constructors, prototypes, factory functions, module pattern, classes, modules:
+
+Oke...
+
+Ik moet dit nog een keer goed over gaan. En vragen eventueel. Erover chatten als ik iets niet
+helemaal snap. En misschien de projecten opnieuw doen.
+
+This snapte ik dus bijvoorbeeld echt niet. Daar was iets mee dat ik echt niet snapte.
+
+oke, ik ga er vanaf Objects doorheen.
+
+hier staat een voorbeeld waarbij... ze de key apart opslaan en laten gebruiken om die te
+setten. dit kan niet met punt notatie
+
+gebruiken ze ook een tweede parameter bij prompt maar dat is iets anders
+
+dit is allemaal veel ingewikkelder dan ik dacht...
+
+heb toch veel gemist.
+
+oh dit is toch best mooi als je het eenmaal snapt, let variabele = prompt(vraag)
+en dan afhankelijk wat je daar hebt ingevuld, als key gebruiken en value 5 toekennen.
+Whatever key, 5. In een object in dit geval dus.
+
+je kan zelfs met plus er nog iets achter zetten binnen de [] haakjes en dan is de complete
+string de key.
+
+en die comma na een naam als in kort, kan ook gecombineerd met een normale
+name,
+age: 30
+name is dus name: name.
+
+kan zelfs keywords als for let en return maar niet __proto__
+
+als de key niet bestaat returned ie undefined, dus daar kan je op checken. Maar als ie echt
+"undefined" opslaat in de key dan is "in" in dat geval nog true (property exists, maar dan
+slaat ie expliciet undefined op).
+
+for in
+for (let key in user)
+
+dan nog iets over volgorde wat ik al herken... vind ik nu niet belangrijk.
+
+---
+
+Dan...
+als je constructors gebruikt, zet de functies van die constructor dan in de prototype
+dat scheelt uiteindelijk
+
+Object.create
+
+---
+
+dan factory functions... redelijk... begrijpbaar
+dit doen ze met een arrow functie
+
+dan is het volgende logisch! Gek genoeg. Ik dacht dat het hier al fout ging maar niet.
+
+dan in de factory function
+const getLevel = () => level;
+ipv
+this.level = level;
+Had ik niet gezien of is nieuw
+
+oke dan hebben ze het over erven... inheritance.
+const Person = (name) => {bla}
+en dan in Nerd
+const {sayName} = Person(name)
+en dan returnen
+
+dan iets over Object.assign(target, source, source)
+Niet heel belangrijk
+
+nou module. En dat is bijna hetzelfde als factory maar dan in een meteen uitgevoerde functie
+dus met () aan het einde.
+dan zeggen ze we kunnen hem aan calculator toewijzen omdat we er niet super veel van gaan
+hebben, we hebben er maar 1 nodig.
+
+Dan snap ik het allemaal nog wel best goed.
+Oh ja returnen. Dat kan ook met een niet genaamde IIFE
+Oke ik heb even getest, het is niet zo dat als ie niet genaamd is dat wat je returned in
+global scope staat. Daarvoor moet je een variabele gebruiken.
+
+dan zegt ie dat een groot nadeel is dat een gereturnde waarde ook te setten is van buiten,
+als ik dat goed heb verwoord.
+
+En je kan dus iets meegeven, aan het begin en dan onderaan tussen de haakjes () die extra
+zijn bij een IIFE. En dan die mock optie. Met || en dan heb ik het gehad.
+
+---
+
+Classes dus nu.
+
+Oke.
+class User {
+  constructor() { ... }
+  method1() { ... }
+  method2() { ... }
+  method3() { ... }
+  ...
+}
+Dat was de basis.
+
+Dan als je let user = new User("John"); doet dan gaat John naar de constructor blijkbaar.
+en die set this.name = name;
+
+geen comma's tussen methods, is soms een fout... maar vind ik logisch
+
+stores class methods in User.prototype
+
+class is a function, or more precisely, the constructor method
+constructor is dus ook eigenlijk een method te noemen
+
+enumerable is false, if for in over object we don't usually want it's class methods...
+Is dus ervaring maar goed weet ik veel hoe ik het ga gebruiken, maar dat word hier dus gezegd
+
+altijd use strict
+
+let User = class { ... }          // kan
+
+let User = class MyClass {
+  sayHi() {
+    alert(MyClass);
+  }
+};                    // MyClass is dan de naam, voor intern gebruik, weet ik nog
+new User().sayHi();   // works
+
+oke hier een voorbeeld voor on-demand maar ja... vind het maar een beetje raar.
+Maar hier returnen ze een class met sayHi erin. Ja... beetje vreemd. Dit laat ik even voor
+wat het is.
+
+get set hier, dat is herkenbaar... vind ik fijn dat het een beetje te relateren is met C#.
+
+computed properties is iets wat behandeld wordt bij objects, dus daarom hier ook nu... Goed
+om te weten. ['say' + 'Hi']() { alert("Hello"); }     
+new User().sayHi(); werkt, je kan dus een naam creëren met [] haakjes. Was toen ook. Kon ik
+denk ik eerst niet thuisbrengen. Nu ik het allemaal nog een keer doorlopen heb weet ik het
+nog. Computer hadden we al gehad.
+
+je kan gewoon een variabele maken
+name = "John";
+En dat wordt dan this.name
+Ook geen let nodig blijkbaar
+wordt individueel geset, niet op user.prototype (maar methods wel)
+
+class User {
+  name = prompt("Name, please?", "John");
+}
+let user = new User();
+alert(user.name);  // John               heel simpel dus
+
+dan iets over dat je this kan kwijtraken. "losing this".
+Oke... dat snap ik niet helemaal goed. Maar nu is er al de summary. Dus dat kan ik nog
+onderzoeken... en dan snap ik het.
+Maar je kan er haakjes omheen zetten, nog een keer... en dan kan het opgelost zijn.
+of click = () => { alert(this.value); }
+ipv click() { alert(this.value); }
+
+dan MDN classes
+
+Hoisting. Volgorde is belangrijk bij classes. Class moet eerst gemaakt worden en dan "new".
+Kan niet eerst new en later de class zelf.
+
+dan iets voor naam. .name dus, veranderd naar die tweede "lokale" naam als die beschikbaar
+is. anders de eerste.
+
+static
+
+hier snap ik dus geen flikker van
+binding this with prototype and static methods
+
+iets met extends
+en super
+
+En dan mix ins.
+
+Video's gezien, een stuk duidelijker. Moet ik het nog opschrijven? Waarschijnlijk wel.
+Extends kopieert van een andere classe, daarin kun je ook overschrijven. Met super call je de
+dingen die je gewoon over wilt nemen.
+
+Static methods bestaan ook, die gelden voor de classe zelf ipv de instantie. 
+
+En dan get en set. Met get kan je static methods ook gebruiken alsof het properties zijn,
+omdat dat eigenlijk nog niet bestaat. En dan moet je iets gebruiken genaamd Babel.
+
+---
+
+Oke.
+
+Ik ben nog steeds hier. Maar dan voor modules. Heb ik niet meegeschreven dus moet ik nu
+misschien alsnog doen.
+
+Het was veel lezen. En uitleg. Niet specifiek code. Maar waarom en etc... 
+
+Eerst de history. Dat was uitleg hoe dingen geëvolueerd zijn.
+
+Dan NPM, dat was al geïnstalleerd in web101-fundamentalspart4. Heb Jasmine niet geïnstalleerd.
+Moest het namelijk overnieuw doen.
+
+
+
+---
+
+Dan een stukje git. De gitignore file. Dat moest ik even opnieuw opzoeken en de bronnen zijn
+veranderd heb ik het idee. Ik zocht uiteindelijk naar tower's. En nu iets gevonden.
+
+Je maakt dus een .gitignore file. Met een naam, weet niet of dat uitmaakt. En dan heb je 4
+snelle situaties.
+- One specific file. Provide the full path to the file seen from the root folder of your
+project.
+path/to/file.ext
+- Ignore all files with a certain name. Just write down the file's name, without giving path.
+filename.ext
+- Ignore all files of a certain type:
+*.ext
+- Ignore all files in a certain folder:
+path/to/folder/*
+
+Dat laatste had ik nodig. Maar in ieder geval.
+
+---
+
+

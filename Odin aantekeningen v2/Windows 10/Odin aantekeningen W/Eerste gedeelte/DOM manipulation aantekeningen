@@ -1,0 +1,77 @@
+DOM manipulation:
+
+selectors:
+een klasse <div class="display"></div> kan geselecteerd worden als
+div
+div.display
+.display
+er zijn ook relationele zoals firstElementChild of lastElementChild
+gecombineerd met "query selectors" doe je dit:
+document.querySelector(".display");
+
+findind/adding/removing en altering DOM nodes:
+nieuw:
+const div = document.createElement('div')
+je moet 'm echter ook nog ergens appenden
+parentNode.appendChild(div)
+weghalen:
+parentNode.removeChild(div) en geeft reference van div
+altering:
+div.style.color = 'blue';
+div.setAttribute('id', 'theDiv');
+
+events en listeners:
+attaching script to event attributes on elements in the HTML document:
+<button onclick='alert(this.tagName)'>Click me</button>
+by setting "on_event_" property on the DOM object in your JavaScript:
+html:
+<button id="btn">Click me</button>
+javascript:
+const button = document.querySelector('#btn');
+button.onclick = (e) => alert(e.target.tagName);
+of by attaching event listeners to the node in your javascript:
+html:
+<button id='btn'>Click Me Too</button>
+javascript:
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', (e) => {
+    alert(e.target.tagName);
+});
+
+uitgebreider:
+button.querySelector(selector) first match selector
+buttons.querySelectorAll(selectors) returns a nodelist(!) of all matches of selectors, 
+use Array.from() als je er echt een array van wilt maken, of the spread operator (3 puntjes, dus ...en dan de variabele)
+gebruikt dan forEach
+buttons.forEach((button) => {
+	button.addEventListener('click', etc...)
+});
+
+
+parentNode.appendChild(childNode)
+parentNode.insertBefore(newNode, referenceNode) zet 'm voor referenceNode
+
+er zijn er 3, maar deze vind ik het nuttigste:
+div.style.cssText = 'color: blue; background: white';
+
+div.setAttribute('id', 'theDiv') maakt een nieuwe of zet de id die al bestaat naar 'theDiv'
+div.getAttribute('id') returns 'theDiv'
+div.removeAttribute('id') verwijderd 'm
+
+div.classList.add('new')
+div.classList.remove('new')
+div.classList.toggle('active') als hij deze classe nog niet heeft add'en, als ie al heeft dan verwijderen. Deze laatste is netter dan add'en en removen.
+
+div.textContent = 'Hello World!' maakt text node en stopt 'm in div
+div.innerHTML = '<span>Hello World!</span>';
+
+events:
+(e) gebruiken voor de event zelf, veel handige properties en functions, of target (the DOM node that was clicked)
+
+------------
+
+const br = document.createElement('br')
+en append
+om een breakline toe te voegen
+
+required aanzetten is setAttribute("required", "")

@@ -1,0 +1,91 @@
+Oké ik ben even bezig met het volgende oefeningetje van Odin. Ik heb dus "net¨ (maanden geleden
+misschien wel) een dropdown menu gemaakt. Een normale, heel basic. En ik heb hem laten werken op
+mouse-hover. Nou moet ik naar mobile gaan daarmee, en uiteraard werkt hover dan niet.
+Je hebt geen muis op mobiel.
+
+En er wordt ook wel gezegd van eigenlijk is het verschil te groot om het dropdown-menu in de
+"normale" hoedanigheid te kunnen behouden (gezien vanuit PC bijvoorbeeld).
+
+Dus heb ik wél even de voorbeelden bekeken. En ik zie er een leuke tussen staan die ik wil
+proberen. En daarom schrijf ik dit op, ik moet zelf even iets interessants vinden, ertussen.
+Wat uitdagend genoeg is en enigszins afwisselend ten opzichte van wat ik al heb gedaan. Gewoon
+een klein greepje uit de dingen die mogelijk zijn, ik vond déze interessant om te proberen. Dus
+daar ga ik nou mee aan de slag, wat is het?
+
+Het is eenzelfde soort menu als drop-down. Maar daar zijn er maar 4 van en dat is
+overzichtelijk, ook op mobile. Maar ik ga er meer maken, zodat het niet meer op het mobile
+scherm past, en dan wil ik hem laten scrollen in de vorm van beweging. Dat je hem van links
+naar rechts kan "slepen" en zo opties meer naar links of meer naar rechts in beeld sleept. Niet
+met sprongen dus maar een soepel geheel.
+
+Om hem maar even aan te geven, zoals het nu gelinkt staat op Odin, druk ik de laatste van de 3
+links in ("...inspiration"). Dan gaat het over hamburgermenu-alternatives. En dan optie 4,
+genaamd "scrollable navigation". Dat scrollt "vloeiend".
+
+Let's go!
+
+-
+
+Ik heb even een lijstje nodig van (te)veel dingen, gebruik daar even het eerste wat ik zie van
+Wehkamp voor:
+vloerkleden, banken, beddengoed, koken & tafelen, badtextiel,
+woonaccessoires, verlichting, kasten, gordijnen.
+
+Het is op mijn PC al teveel, haha. Dus dit is meer dan genoeg, en het zijn nog lange namen ook.
+Maar waarschijnlijk ziet het er niet uit (uitgaande van dat sommige dingen niet echt categoriën
+te noemen zijn).
+
+-
+
+Nou gezien dat ik toch ergens een dagboek mapje heb, nou goed. Mooi. Ik moet dit even
+concretiseren.
+-
+
+Waar ik blij mee ben is dat het duidelijk begon te worden voor mij wanneer margin auto etc niet
+centreerd, wat daar voor nodig is, wanneer wel, etc. Het zit er nog wel ergens. Het begon voor
+mij net duidelijk te worden. Dat is wel mooi. Oh ja ik denk terwijl ik met mijn website bezig
+was! Dat is al wat recenter. Hoe kan je bijvoorbeeld iets te verwachten te centreren als de
+grootte (breedte in dit geval vaak) nog niet vast staat? Dat soort dingen zijn wel nodig, etc.
+Daar borduurde het op vooruit.
+
+Als je dat eenmaal ziet denk ik dat het sowieso wel ergens blijft, en je het niet meer zo
+nauwkeurig onthouden hoeft. Als het begint te dagen is het goed. Het werd voorspelbaar!
+
+-
+
+Oké nou hoe krijg ik die eerste "omstandigheden" ook alweer?? Ik had volgens mij destijds
+geleerd dat je met labels gekoppeld aan onzichtbare radio knoppen of zo selecties kon maken
+van welke dropdowns je laat zien en welke nog onzichtbaar blijven. Ik weet waar ik naar op
+zoek ben, ik heb die weer nodig.
+
+Even naar een vroegere oefening??
+(ja!)
+
+Restaurant inderdaad. Het staal al in uitgecommente code in de HTML file. Maar ik heb
+schijnbaar alles moeten maken vanuit javascript etc, maar het staat hier goed, de combinatie
+tussen labels en radiobuttons-input.
+Prima.
+
+Oké dit is dus wel een beetje wat ik kwijt ben, het gaat met een for die specifiek lijkt te
+(moeten) verwijzen naar de id van de radioknop. Want ik heb er bij gezet dat je naar id 
+verwijst zonder # te gebruiken.
+
+Volgens mij hoefde ik dat echter niet te gebruiken voor... de hover van dropdown. Hmm.
+
+Nou goed ik heb het even gekopieerd gewoon om te kijken wat het wordt.
+Nu zit ik te denken aan het hidden maken van de radio knoppen, maar dan worden wel de locaties
+behouden, en beïnvloeden de positie van de labels nog steeds. Ipv dat de labels het
+"overnemen".
+
+Dan moet ik iets met position doen dus denk ik (is zo opgezocht).
+
+Oh oké dat zit er ook bij. Opacity op nul echter, en width 0, en dan position fixed. En dan
+verdwijnt ie zo goed als.
+Dat is precies wat ik wilde hebben, en ook al waren de HTML elementen uitgecomment, de css
+file hield er nog steeds rekening mee.
+Dus het werkt op hetzelfde concept alleen dan via javascript kan ik wel concluderen.
+Prima. Dan heb ik het al.
+
+De basis in ieder geval.
+
+Oké nou ik vind het wel even goed voor nou.

@@ -1,0 +1,41 @@
+Odin na lange tijd weg zijn geweest.
+
+Begin dan dus weer hier.
+
+-
+
+Oke ik kan dit wel goed gebruiken, ik kan hier even opnieuw aantekeningen gaan opslaan die ik
+nodig heb. Gaat dubbel worden, maar ik begin ook eigenlijk weer vanaf nul, dus het is niet
+vreemd om het even zo te doen.
+
+-
+
+Oke nou ben ik aan het kijken voor mijn opdracht dus, de tussenopdracht mobile menu eerst.
+
+En ik zie hier een aantal handige dingen voor CSS, selectors eigenlijk.
+Ik zocht eigenlijk op what de "name" specificering was, je had toch al ID en Class toch? Dan dus
+ook gewoon nog een name?? Nou goed.
+
+-
+
+Oke ik heb dus een stuk toegevoegd aan de HTML CSS aantekeningen die ik heb van freecodecamp,
+dit is ook daar te vinden ertussen in ergens (kan je op zoeken natuurlijk, met een keyword):
+
+<style>
+[type=’checkbox’] {
+margin-top: 10;				// voor iets anders als id's en classes
+margin-bottom: 15;
+}
+</style>
+En dan heb je dus nog meer optie's:
+- [type~= afzonderlijke woorden, niet "onderdelen" er van, het is alleen te isoleren met gewoon spaties of misschien ook -
+- [type*= wel "onderdeel" er van, dus als deze selector er ook maar ergens in voor komt wordt
+het geselecteerd
+- [type|= hetzelfde als ~, maar dan startende met, dus hele "geïsoleerde" woorden, dus - of
+spaties
+- a[type^= hetzelfde als *, maar dan startende met, maar onderdeel dus alles, niet afgebakend
+- a[type$= eindigend met, en altijd... er is ook geen "hele woorden" variant van zoals ~ of |
+
+-
+
+

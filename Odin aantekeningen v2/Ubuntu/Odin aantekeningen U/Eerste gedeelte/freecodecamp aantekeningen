@@ -1,0 +1,659 @@
+Basic HTML and HTML5.
+
+<h1>Hello</h1>
+
+<h2>Kitty</h2>
+
+Lorem ipsum
+
+<!--
+Comments
+-- >
+
+Delete h1      // niks, gewoon verwijderen van elementen
+
+<main>
+Om aan te geven waar het merendeel van de pagina op staat      // op fcc staan meer elementen
+</main>
+
+<img src=”link” alt=”toegankelijkheid”> 
+
+<a href=”link”>link naam</a>
+
+<a href=”#intlinknaam”>interne link naam</a>       // gaat naar deel pagina bijv footer
+<h2 id=”intlinknaam”>contacts</h2>
+
+nesten
+<p> Tekst om meer <a href=”link”>afbeeldingen</a> te zien</p>
+
+dead links					// als placeholder
+href=”#’
+
+nest <a href=”#”><img src=”linkImage” alt=”beschrijving”></a>  // maakt van afb. link
+
+lists
+<ul>
+	<li>catnip</li>
+	<li>naps</li>
+	<li>birds</li>		// krijgt bolletjes te zien
+</ul>
+<ol>
+	<li></li>
+	<li></li>	// krijgt nummers te zien ipv bolletjes, maar niet alfabetisch ofzo
+	<li></li>	
+</ol>				
+
+<input type=”text” placeholder=”standaard tekst” required> (wordt een balkje waarin je tekst kan invoeren)
+
+<form action="where-to-submit-url"></form>	// is nodig voor de button die volgt
+
+<button type=”submit”>tekstOpButton</button>	
+
+"required" bij input, submitten kan nu pas als vak gevuld is
+
+radio button
+<form>
+<label for=”indoor”><input id=”indoor” type=”radio” name=”groupName”>tekst naast button</label>				// voor "for" geen #
+</form>
+
+checkbox
+<form>
+<label for="loving"><input id="loving" value=”loving” type="checkbox" name="personality" checked>Loving</label>			// voor vinken
+</form>
+
+value="indoor" of value="outdoor" toegevoegd aan radio (en checkbox) knoppen
+
+"checked" toevoegen zoals je "required" zou toevoegen hierboven, gewoon enkel woord
+
+<div>			// simpel, "general purpose container for other elements"
+</div>
+
+<!DOCTYPE html> (aan het begin)
+<html>
+</html>
+
+<head></head>		// niet te verwarren met header en bijv footer
+<body></body>
+
+----------------------------------
+
+Basic CSS
+
+<h2 style=”color: blue;”>CatPhotoApp</h2>		// inline
+
+<style>							// in een <style> tag
+h2 {
+color: red;
+}
+</style>
+(met inspringen erbij)
+
+classes is . en id's zijn #		// samengevat, id's horen uniek te zijn
+
+<style>
+.blue-text {
+color: blue;
+}
+</style>
+<h2 class=”blue-text”>CatPhotoApp</h2>
+<p class=”blue-text>tekst paragraph</p>
+
+<style>
+p {
+font-size: 16px;
+font-family: monospace;
+}
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+h2 {
+font-family: Lobster, sans-serif;
+}								// dit is ingewikkeld
+</style> 							// moet mssch site raadplegen
+(als link uit-gecomment wordt valt ie terug op sans-serif)
+
+<style>
+.smaller-image {
+width: 100px;		// oorspronkelijke afbeelding kleiner maken
+}
+</style>
+
+<style>
+.thick-green-border {
+border-color: green
+border-width: 10px
+border-style: solid;		// kan meerdere classes door spatie tussen namen te zetten
+}
+<img class="smaller-image thick-green-border">
+
+border-radius: 10px; (rounded-corners)		// niks bijzonders
+border-radius: 50%; (veel)			// afbeelding wordt rond (afgesneden hoeken)
+
+<style>
+.green-background {
+background-color: green;
+}							// niks bijzonders
+</style>
+<div class=”green-background”>voorbeeldTekst</div>
+
+<style>
+#cat-photo-form {
+background-color: green;		
+}							
+</style>
+<form id=”cat-photo-form”></form> altijd uniek, gebruik niet voor meerdere elementen
+EN id gaat boven classes en notice dat het een # ipv een . is.
+
+padding: 10px;					// padding tussen text en border
+margin: 10px; (van buiten naar binnen)		// margin is tussen border en buiten
+
+negative margin kan ook
+
+padding-top
+padding-right
+padding-left				// heeft ook invloed op positie tekst, offcenter
+padding-bottom (zo ook voor margin)
+
+padding: 10px 20px 10px 20px; (kloksgewijs)		// zo ook margin:
+
+
+<style>
+[type=’checkbox’] {
+margin-top: 10;				// voor iets anders als id's en classes
+margin-bottom: 15;
+}
+</style>
+En dan heb je dus nog meer optie's:
+- [type~= afzonderlijke woorden, niet "onderdelen" er van, het is alleen te isoleren met gewoon spaties of misschien ook -
+- [type*= wel "onderdeel" er van, dus als deze selector er ook maar ergens in voor komt wordt
+het geselecteerd
+- [type|= hetzelfde als ~, maar dan startende met, dus hele "geïsoleerde" woorden, dus - of
+spaties
+- a[type^= hetzelfde als *, maar dan startende met, maar onderdeel dus alles, niet afgebakend
+- a[type$= eindigend met, en altijd... er is ook geen "hele woorden" variant van zoals ~ of |
+
+
+je hebt absolute en relative units, in (inch) en mm (millimeter) zijn absoluut
+px
+em					
+rem
+
+er is altijd een body
+kan color aanpassen
+kan font-family aanpassen
+zoals elk ander element
+
+-
+
+speciale class wint van algemene body, en in <style></style> is volgorde belangrijk, de 2de of de laatste wint. In het HTML element maakt het niet uit, het gaat om de volgorde in
+<style></style>
+
+#Id wint van .classes 
+en
+inline style wint daar weer van
+(<h1 style=”color: green;” class=”pink-text blue-text”>tekst</h1>
+
+!important
+color: red !important;		// wint van alles
+
+-
+
+hexadecimal colors
+#000000 is zwart
+2 voor red 2 voor groen 2 voor blauw in die volgorde. F is het hoogst, 0 laagst.
+kan ook korter
+#F00 is rood en de helft korter
+
+rgb kleuren
+rgb(0, 0, 0)
+rgb(255, 255, 255)
+
+variabele in css maken
+--penguin-skin: gray;
+nu kan:
+background: var(--penguin-skin, black)
+2de kleur is fallback, niet gebruikt (to increase browser compatibility), useful for debugging
+
+background: red
+background: var(--red-color);
+(voor compatibiliteit)
+
+:root {
+}
+grijpt vaak terug op html element dus helemaal naar de oorsprong
+alles daarin kan daarna nog een keer gebruikt worden om te specificeren
+
+
+en dan iets heel mysterieus:
+kan dat specificeren aspect ook gebruiken voor:
+@media (max-width: 350) { (net als :root maar meestal daarna)
+gespecificeerde values
+}
+
+---------------------------
+
+Applied Visual Design
+
+text-align: center/left/right;
+text-align: justify verdeelt over hele ruimte op laatste zin na(zou heel veel ruimte zijn)
+
+width: nummer+eenheid
+height:
+
+<strong></strong> (dikgedrukt)
+<u></u> (underline, caution: can be confused with a link (in appearance))
+<em></em> (italicize)
+<s></s> (strike through text)
+
+<hr></hr> (horizontal line of element)
+
+rgba(255, 255, 255, 0.5) (gaat van 0 tot 1, 0 transparant)
+
+<h1> zijn header tags
+font-size			// voor text-grootte
+
+box-shadow: offset-x offset-y blur-radius spread-radius color
+(blur radius and spread-radius both optional)
+
+opacity: 0.5                // is ook een optie bij elements, dus los ipv in rgba
+
+text-transform: lowercase/uppercase/capitalize/initial/inherit/none
+initial uses default value				// meteen een hele lijst aan opties
+inherit use text-transform value from the parent element
+
+font-size
+font-weight (grote getallen in oefening, 200 tot 800)   // geen pixels of eenheid hier
+
+line-height:				// hoeveel ruimte er om de tekst is, in hoogte
+
+-
+
+a:hover {				// heet een pseudo-class, heel handig
+color: blue;
+}
+
+-
+
+position: relative;
+top/right/bottom/left: (weg van gekozen richting)      // omringende blijven hetzelfde
+
+position: absolute; (geen idee wat dit doet, maar kan op een parent die weer relative heeft)
+
+fixed: blijft plakken als je scrollt
+
+er is ook nog een "position: sticky"
+
+float: left/right; (vaak in combinatie met width, hoeveel ruimte hij inneemt aan de linker of rechter kant (naar het midden toe dus))
+
+z-index-blauw: 1;
+z-index-rood: 2;
+red zit nu op blauw, dus red wordt helemaal weergegeven en blauw deels (als ze overlappen)
+
+margin: auto; kiest het midden voor een element, dat is het effect   // deze had ik dus nodig
+werkt ook voor afbeeldingen, kan display op block zetten dan blockt ie andere elements
+
+kleuren, iets anders dan vroeger werd verteld het werkt voortaan met rood groen blauw
+blauw is wel het tegenovergestelde van geel. Maar rood is niet het tegenovergestelde van groen. Raar… dat werd bij die 3D brillen nog wel gebruikt…
+
+hsl(360, 100%, 50%) (hue, saturation, lightness of hsl 50% being normal)
+
+background: linear-gradient(degrees, color1, color2, color3, …); (degrees in example 35deg)
+
+background: repeating-linear-gradient(degrees, color1 px, color2 px, color3 px, color4 px)
+
+background: url(link (niet in quotes maar direct))
+
+transform: scale(multiplied);          // wordt groter vanuit midden
+
+div:hover {
+transform: scale(); (was al bekend eigenlijk)
+}
+
+transform: skewX(24deg);		// maakt schuin
+transform: skewY(-10);			// maakt schuin anders
+
+een maanvorm gemaakt
+
+::before
+::after bijv.
+.heart::before
+.heart::after (waar het echt goed voor is weet ik nog niet)
+transform: rotate(-45deg);
+
+rotate dus... (hierboven)
+
+animation-name: naam;
+animation-duration: 4s; (kan ook in ms, 1000ms is 1s)
+@keyframes naam {
+	0% {
+	kleur
+	}
+	50% {
+	andere kleur
+	}
+	100% {
+	laatste kleur 
+	}
+}
+
+kan ook met hover, dus dan doe je button:hover {animation-name: hvr; animation-duration: 5s;}
+en dan een @keyframes ergens met die naam
+
+animation-fill-mode: forwards (om de eindstand vast te houden bij het einde v/d animatie)
+dit doe je bij waar ook de name en duration staan
+
+als relative of fixed, gebruik van top left right bottom kan een element verplaatsen
+
+kan ook met opacity weer, tussen 1 en 0
+
+animation-iteration-count: 3 of infinite bijv
+(enkele keren, of “infinite” zonder aanhalingstekens, ook weer bij naam en duration)
+
+animation-timing-function: ease/ease-out/ease-in/linear;
+ease (start slow speeds up in middle then slows down)
+ease-out (starts quick and then slows down)
+ease-in (starts slow and then speeds up)
+linear
+
+bezier-curves, je hebt maar 2 punten die je kunt manipuleren:
+cubic-bezier(x1, y1, x2, y2)
+x as is de tijd
+y as kan ook hoger als 1
+dus
+animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75) (is linear)
+
+----------------------------------
+
+Applied Accessibility
+
+<img src=”link” alt=”description”>      // alt is bij afbeeldingen verplicht
+					// is ook voor search engines
+
+alt lege beschrijving als het niet nodig is, dus wel nog steeds een alt maar met een lege string “”		// als al uitgelegd wordt en niet nodig is, een lege alt
+			// achtergrond afbeeldingen hoeft meestal niet, is alleen css
+
+gebruik de <h...> tags nuttig en niet voor hun grootte, die kan je altijd nog aanpassen. En iedere pagina zou maar één <h1></h1> moeten hebben, als titel of iets vergelijkbaars. Van de andere kunnen er meer zijn. Dit is allemaal ook voor search engines.
+
+main/header/footer/nav/article/section
+Van main zou er ook maar 1 moeten zijn, en dat moet het engelse main ook uitbeelden. Dus dat gaat om het belangrijkste deel van de website. Het “hoofd”-deel zoals wij dat in het
+Nederlands zouden zeggen.
+
+“article” is voor stand-alone content. “section” is for grouping thematically related content. Dus is voor meerdere “delen”. Als ze niks met elkaar te maken hebben kun je <div></div> gebruiken.
+
+The next HTML5 element that adds semantic meaning and improves accessibility is the header tag. It's used to wrap introductory information or navigation links for its parent tag and works well around content that's repeated at the top on multiple pages.
+header is voor in body, head is iets anders en komt boven body in html
+
+<nav></nav> is voor als je een aantal links bijvoorbeeld bovenaan de pagina hebt staan, maar onderaan de pagina hoeft dat niet, daar kan je een footer voor gebruiken.
+
+<audio id=”naam” controls>				// vergeet de controls niet
+<source src=”link” type=”audio/mpeg”>
+</audio>
+
+<figure>			// om te groeperen en een alternatief te bieden aan visuele
+<figcaption></figcaption>	// representaties
+</figure>
+
+<form>
+<label for=”email1”>tekst</label>			
+<input type=”text” id=”email1” name=”email”> 	// weet niet zeker of email1 en email 								// hetzelfde moeten zijn, wel in voorbeeld.
+						// is misschien niet zo belangrijk als de
+						// anderen. Snap ook niet zo goed, deze.
+
+
+zo kan je ook bij radio knoppen een <fieldset></fieldset> gebruiken ipv een div. En dan de “vraag” met een <legend></legend>
+<fieldset>
+<legend>Choose on of these three items</legend>	// om radio buttons te groeperen, omdat het
+</fieldset>					// er meestal meerdere zijn.
+
+name is voor input versturen, voor identificeren. Pas als je het op gaat sturen ergens naar
+<input type=”submit” name=”submit” value=”Submit”>
+</form>
+voor meerdere radio buttons die elkaar uitsluiten, dezelfde "name" gebruiken.
+
+je kunt naast “text” en “submit” ook een type “date” gebruiken sinds HTML5, maar het helpt om erbij te vermelden dat het om een datum gaat omdat oudere browsers naar “text” terugvallen
+
+<time datetime="2016-09-15">Thursday, September 15<sup>th</sup></time>. (doet verder niks)
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+  }
+(sr-only staat voor screen-reader only)(dit is om iets te verbergen)
+
+er is zoiets als een kleur contrast ratio die minimaal 4,5 to 1 moet zijn
+
+er zijn ook simulaties om te laten zien hoe sommige kleuren eruit zien voor een bepaalde kleurblindheid, wat erg handig is samen met de contrast-methode
+
+mensen met een handicap hebben ook de optie om delen over te slaan, en onder andere alleen de links voor te lezen. Daarom functioneert een “klik hier” en daarbuiten de beschrijving dan niet. Dus als je een <a href=”link”></a> element hebt, zorg dan dat er een beschrijvende tekst binnen die haakjes staat.
+
+Je kunt ook accesskey’s toewijzen, vaak voor interactieve content (dat is het meest nuttig).
+<a id=”naam” href=”link” accesskey=”g”></a>	// dus links buttons and form controls
+
+als users door een website heen tabben dan kun je voor een element een stop vragen door de tabindex=”0” te gebruiken. Er worden soms ook negatieve waarden hiervoor gebruikt maar dat is beyond the scope voor deze lessen.
+
+Je kunt ook met tabindex 1, 2 en 3 enz. de volgorde bepalen. Maar wees voorzichtig voordat je hier toe over gaat. 1 is dan als eerst, daarna opvolgende nummers en dan de default en nul waardes. Mensen verwachten van boven naar beneden te gaan.
+
+--------------------------------------------
+
+Responsive Web Design Principles
+
+volgende lukt niet op chromium browser
+@media (max-height: 800px) {
+p
+{
+font-size: 10px;
+}
+}
+
+voeg dit toe
+img {
+max-width: 100%;
+height: auto;
+}
+
+voor high resolution displays (mac retina)
+img { height: 100px; width: 100px; } (origineel was 200, half dus, half zo groot maken)
+
+je kunt ook een andere eenheid gebruiken voor groottes, namelijk:
+vw (viewport width): 10vw would be 10% of the viewport’s width
+vh (viewport height): 3vh would be 3% of the viewport’s height
+vmin (viewport minimum): 70vmin would be 70% of the viewport’s smaller dimension (height or width)
+vmax (viewport maximum): 100vmax would be 100% of the viewport’s bigger dimension (height or width)
+h2 {
+width: 80vw;
+}
+
+--------------------------------
+
+CSS Flexbox
+
+#box-container {
+display: flex;
+} (moet waarschijnlijk bij veel elementen, of dat kan in ieder geval)
+
+flex-direction: row/column/row-reverse/column-reverse;
+row is horizontaal
+column is verticaal
+
+
+
+
+Als je dit hebt, dan kun je in box-container flex-direction: column zetten en dan staan box-1 en box-2 onder elkaar:
+<div id="box-container">
+	<div id="box-1"></div>
+	<div id="box-2"></div>
+</div>
+
+justify-content: center; (main)		// zet in midden
+of
+flex-start (default)		// alles bij begin, dus links voor row en top voor column
+flex-end			// eind, dus rechts of bottom
+space-between			// een links rand een rechts rand, rest evenly spaced between
+space-around			// half space ends, rest evenly
+space-evenly			// hele space ends alles evenly
+
+align-items: stretch; (cross-axis)
+of
+flex-start
+flex-end
+center
+stretch (default)	// stretch items to fill flex container
+baseline		// lijn waar letters op zitten, align items to their baselines
+
+flex-wrap: nowrap; (default)	// dit is om naar volgende regel verder te gaan
+of
+wrap
+wrap-reverse			// dit is helemaal reverse, dus alles
+
+flex items
+
+flex-shrink: nummer; hoe hoger hoe sneller hij kleiner wordt
+// is relatief aan anderen, 2 en 1 is een 2 zo klein als ander 
+// alleen als container too small is.
+
+flex-grow: nummer; hoe hoger hoe groter hij wordt
+// ook hier dezelfde cijfers
+
+flex-basis: nummer in px/em/% en auto
+// hetzelfde
+
+flex: grownr. shrinknr., basisnr. (korter, default is 0 1 auto;)
+// dit is verkort voor alles
+
+order: nummer; (volgorde, kan ook negatief)   // ook in relatie tot ander
+
+align-self: zelfde waarden als align-items hierboven.
+// voor individueel, want css werken sommige dingen dan niet meer
+
+-----------------------------------
+
+CSS Grid
+
+Turn any HTML element into a grid container by setting its display property to grid. This gives you the ability to use all the other properties associated with CSS Grid.
+Note: In CSS Grid, the parent element is referred to as the container and its children are called items.
+
+grid-template-columns: 100px 100px 100px;
+
+grid-template-rows: 50px 50px;
+Kan ook andere eenheden:
+grid-template-columns: auto 50px 10% 2fr 1fr;
+- fr is fraction of available space
+- auto sets width or height automatically
+- % sets column or row to percent width of its container
+
+grid-column-gap: 10px;
+grid-row-gap: 5px;
+grid-gap: nummer1, nummer2 (als je maar 1 nummer gebruikt gebruikt ie die voor rows en columns, en als je 2 nummers gebruikt de eerste voor row en tweede voor column)
+
+grid-column: 1 / 3;   telt in lijnen tussen de columns of rows. Begint bij 1 gaat tot 3 hier,
+grid-row: 2 / 4;      dus eerste 2 vakken. En <- hier laatste 2.
+(begint bij 1 en gaat zo stapjes horizontaal voor columns en verticaal voor rows)
+
+justify-self: start/center/end; (horizontaal)   het uitlijnen van de items
+align-self: start/center/end; (verticaal)
+
+justify-items: start/center/end;              // in container vàn items, en dan allemaal.
+align-items: start/center/end;
+(in container)
+
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer"; (elke row is met haakjes, en een cell kan leeg zijn door . neer te zetten)
+.item {
+grid-area: header;          // zo wijs je een ruimte toe
+}
+
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+bijv.
+grid-area: 3/1/4/4;
+
+grid-template-rows: repeat(100, 50px);
+grid-template-columns: repeat(2, 1fr 50px) 20px; wordt hetzelfde als:
+grid-template-columns: 1fr 50px 1fr 50px 20px;
+
+grid-template-columns: 100px minmax(50px, 200px); 
+
+repeat(auto-fill, minmax(60px, 1fr)); (this setup keeps inserting 60px columns and stretching them until it can insert another one.)
+Note: If your container can't fit all your items on one row, it will move them down to a new one.
+
+auto-fit doet wat je denkt dat het doet, lijkt op auto-fill
+zelfde Note applies als hierboven // nu vind ik 'm minder logisch, maar ik heb het gezien...
+
+dan nog een keer @media(min-width 400px){code}       // opdracht was verander header footer
+
+grid in een grid
+display: grid;				// nog een keer display grid doen
+display-template-columns: auto 1fr;	// en dan weer zoals gewoonlijk
+
+---------------------------------------------
+
+Aantekeningen
+
+<a href="https://ibb.co/P4MxsXw"><img src="https://i.ibb.co/ft9MV64/muhammad-ali-vechtend.jpg" alt="muhammad-ali-vechtend" border="0"></a>
+
+Dit moest ik doen om de eerste website werkend te krijgen:
+#image {
+width: 100% (ik had max-width)
+height: auto;
+max-width: 799;
+margin-left: auto;
+margin-right: auto;
+display: block;      <--- deze volgens mij... was nieuw voor mij...
+}
+
+Je hebt <head> als in <head> en <body> en je hebt <header> en dat is weer hetzelfde als <footer>. Was daar even in de war over.
+
+<head>
+<meta charset="utf-8">    < ----------- toevoegen
+<title>My test page</title>
+</head>
+
+<head>
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+styles is hier folder-naam
+
+viool
+
+<script src="javascript/myscript.js"></script>
+
+<br> voor een break, zie DOM aantekeningen om dynamisch toe te voegen
+
+let op de quotes. Hier uit kopiëeren kan verkeerde quotes geven.
+
+display: block. Is standaard voor sommige elementen en verklaard waarom sommige elementen op
+een nieuwe lijn beginnen en andere niet (onder andere).
+block elements take full width by default
+each gets displayed in a new line
+width & height properties can be set
+can contain other block or inline elements.
+
+display: inline              // nog een keer opzoeken
+display: inline-block	     // nog een keer opzoeken
+
+oke.. ik zie nu een dropdown menu in 1 van de studenten uitwerkingen. En ik ben toch even
+gaan kijken. Maar dat kan ik ook doen bij de Freecodecamp opdracht. Het gaat met
+<select>
+ <option value="optieNaam"></option>
+ <option value="optieNaam2"></option>
+ <option value="optieNaam3"></option>
+</select>
+Dat ik daar toen niet aan heb gedacht... ik had het gewoon kunnen zien. Nou ja even kijken
+bij de Freecodecamp opdracht.
+Juist, ook met select. Dus ik kan die opdrachten wel gaan doen. Ik moet gewoon even kijken.
+Ik dacht dat hebben we nog niet gehad dus dat is niet mogelijk. Maar je kan het makkelijk
+zien.
+
+labels zijn inline elementen en daarom werkt width "dus" niet:
+je kunt het aanpassen door display: block te doen
+maar je wilt eigenlijk display: inline-block
+dan staan ze namelijk nog wel zoveel naast elkaar als dat mogelijk is, maar kun je ze ook
+width geven.
+En dan misschien nog text-align: center (in mijn geval wel).

@@ -1,0 +1,51 @@
+javascript classes
+
+Oke gewoon een stukje lezen. Pro's en con's. Hoe erover te denken.
+
+class MyClass {
+  constructor() { ... }
+  method1() { ... }
+  method2() { ... }
+  method3() { ... }
+  ...
+}
+
+In Javascript, a class is a kind of function (check with typeof).
+
+class User{}
+Stores class methods suhc as sayHi in User.prototype
+
+let User = class {
+  sayHi() {
+    alert("Hello");
+  }
+};
+kan ook
+
+Methods
+get name() {}
+set name(value) {}
+
+gewoon meteen:
+name = John;
+is set on individual objects, not prototype
+
+summary:
+class MyClass {
+  prop = value;              // property
+  constructor(...) {         // constructor
+    ...
+  }
+  method(...) {}             // method
+  get something(...) {}      // getted method
+  set something(...) {}      // setter method
+  [Symbol.iterator]() {}     // method with computer name (symbol here)
+}
+
+als
+let User = class Naam {}
+dan is naam alleen in de class body beschikbaar
+
+body class is strict mode
+
+

@@ -1,0 +1,185 @@
+javascript.info/function-expressions
+
+functies opslaan in een variabele
+door functies zonder () te vragen vraag je de hele functie op, alles wat erin staat.
+als je dat in een variabele zet neemt ie de functie over
+
+Het verschil zit 'm in de naamgeving hier, bij functie declaratie typ je "function naam(a, b)"
+en bij function expression doe je "let naam = function(a, b)" en geef je 'm op een andere manier een naam.
+de expressie wordt gemaakt wanneer de code er voor het eerst langs gaat, bij de declaration kan het vooraf of naderhand gebruikt worden dat maakt niet uit
+
+dan ook nog: In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+de rest is logisch... je kunt bij expression de naam al ergens buiten zetten of in global in dit geval en dan de functie erin opslaan, dan kun je 'm "erbuiten" blijven gebruiken.
+
+javascript.info/arrow-functions-basics
+
+let sum = (a, b) => a + b; of nog korter
+let double = n => n * 2; maar als je een lege hebt moeten de haakjes nog wel
+
+Sometimes we need something a little bit more complex, like multiple expressions or statements. It is also possible, but we should enclose them in curly braces. Then use a normal return within them.
+
+------------------------------------------
+
+w3schools.com/js/js_arrays.asp
+
+let cars = ["Saab", "Volvo", "BMW"];
+je kan ook
+let cars = new Array("Saab", "Volvo", "BMW");
+bij voorkeur de eerste, belangrijk ("new" kan voor problemen zorgen, al eerder gezien)
+en werkt gewoon vreemd en anders dan ie zou moeten, nog een voorbeeld hiervoor later op pagina
+
+let name = cars[0]; De eerste
+
+let x = cars.length // slaat 3 op in cars
+
+for loop
+for (i = 0; i < x; i++) waarbij x = cars.length (zoals hierboven)
+je kan ook
+cars.forEach(doe dit);
+
+cars.push("Audi") zet audi aan het einde van de array
+kan ook cars[cars.length] = "Audi"; Maar let op je kan gaten krijgen in een array als je verkeerde nummers toewijst (vooral bij hoge getallen opletten).
+
+bij Javascript zijn er geen "genaamde" arrays. Als je die probeert te maken zet Javascript ze om in gewone objecten. Dan kunnen sommige array methods en properties incorrecte resultaten geven
+wordt ook een voorbeeld gegeven dat length bij cars nul geeft en plaats [0] undefined geeft
+
+dit is om een te kijken of iets een array is:
+function isArray(x) {
+  return x.constructor.toString().indexOf("Array") > -1;
+}
+always true if array...
+...Or more precisely: it returns true if the object prototype contains the word "Array".
+cars instanceof Array; // returns true
+
+----------------------------------------
+
+w3schools.com/js/js_array_methods.asp
+
+.toString() of
+.join doen hetzelfde maar bij join kan je andere onderbreking aangeven
+cars.join(" * ");
+
+let x = cars.pop() haalt de laatste weg en returned welke is weggehaald dus x is "BMW"
+let x = cars.push("Audi") voegt audi toe aan het einde en geeft nieuwe lengte aan x is 4
+let x = cars.shift() haalt de eerste weg en zet de rest 1 plaats eerder, en x is "Saab"
+let x = cars.unshift("Audi") voegt 1 aan het begin toe en schuift de rest 1 op, x is nieuwe lengte
+
+gebruik het nummer om individuele elementen aan te passen, dus cars[0] = "Audi";
+cars[cars.length] = "Audi" kan je gebruiken om makkelijk een item toe te voegen. Zelfde als push.
+delete cars[0]; veranderd eerste element in undefined. Dus je krijgt gaten. Gebruik pop of push.
+
+cars.splice(1, 0, "Audi", "Renault"); splice(geeft aan welke positie inspringen, hoeveel er verwijderd moeten worden, en de in te voegen variabelen met ertussen komma's) returns array met deleted items
+splice kan gebruikt worden om slim items te verwijderen(!) door (0, 1) aan te geven wordt er 1 verwijderd op plek nul en schuift de rest wèl terug. Anders dan bij delete dus.
+
+carsAndFruit = cars.concat(fruits) geeft een nieuwe array met de samengevoegde arrays.
+kan ook meerdere zoals carsAndFruit = cars.concat(fruits, moreFruits, evenMoreFruits)
+kan ook strings toevoegen cars.concat("Audi")
+
+cars.slice(beginnummer, nummer tot aan maar niet inclusief)
+cars.slice(1, 3) is dus 2 en 3 (vanwege de 0, dus 1 en 2 maar niet 3) maar niet 4.
+als je eind argument weg laat is het rest van array
+let op deze verwijderd niks uit de oude, geeft alleen een nieuwe gedeeltelijke
+let op verschil splice en slice
+
+------------------------------
+
+mdn javascript Looping_code
+
+for (i = 0; i < 5; i++) {
+code
+}
+of ++i dus...
+
+continue gaat >direct< naar de volgende iteratie
+
+while (exit-condition) {
+    code
+    plus iets wat veranderd voor de while loop
+}
+
+of
+do {
+    code
+    plus iets
+} while (exit-condition)
+
+------------------------
+
+javascript.info/while-for
+
+je kan hier ook breaks gebruiken om uit een loop te gaan en ook een continue om de huidige iteratie te beeïndigen en de volgende in te gaan.
+
+met ternary operators break en continue zijn niet toegestaan.
+
+als je in een keer uit een veelvoud wil breaken of continue'en kun je labels gebruiken. 
+Dan zet je gewoon de gewenste naam van je label met : voor de for loop bijvoorbeeld
+en dit: A call to break/continue is only possible from inside a loop and the label must be somewhere above the directive.
+
+odin project dom manipulation
+
+Oke dus ik heb even wat in te halen... Ik snap nu de dom uitleg, want er waren klikbare Learning Outcomes. Dat is eigenlijk niet de bedoeling, maar die verhelderde een deel. En toen kon ik de oefen opgave ook weer maken dus ik ben weer een stap verder. Maar ik heb het niet gelogd. Dus dat ga ik nu doen.
+
+-----------------------------------
+
+wes bos javascript30 nummer 4, "array cardio".
+
+Filter. Op een array. Je passed het een functie, en die geeft inventor. Loopt over alle elementen in inventors.
+inventors.filter(function(inventor) { 
+    if(inventor.year >= 1500 && inventor.year < 1600) {
+        return true;
+    }
+}
+
+Map. Op een array. Doet iets met de array. En returned een array met dezelfde lengte als gegeven. Je passed het ook weer een functie. Geeft inventor. Dit is met een arrow functie:
+const fullNames = inventors.map(inventor => inventor.first + ' ' + inventor.last);
+console.log(fullNames);
+
+Sort. Begint met 2 items. Vergelijkt die 2. Returned 1 voor de één en -1 voor de ander.
+const ordered = inventors.sort(function(a, b) {
+    if(a.year > b.year) {
+        return 1;
+    } else {
+        return -1;
+    }
+});
+Kan korter met arrow, implicit return en ternary operator.
+const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+console.table(ordered);
+
+Reduce. Houdt een totaal bij. Result/total.
+const totalYears = inventors.reduce(function(total, inventor) {
+    return total + (inventor.passed - inventor.year);
+}, 0);
+Hier moet een nul bij, die gaat als 2de, achter de functie (zoals je ziet, helemaal onderaan).
+
+Nog een sort.
+
+Hier gaat ie naar een website. Hier gebruikt ie map en filter (volgens mij óp elkaar, maar 
+het staat onder elkaar dus niet zeker). En Array.from() om de nodelist naar een array om te 
+zetten. Kan ook met (...), de spread operator.
+
+Nog een sort.
+
+Nog een reduce.
+
+-------------
+
+wes bos javascript30 nummer 7, "array cardio day 2"
+
+Some. Is er 1 in array? Wordt boolean.
+
+Every. Is het allemaal? Is ook boolean. Voorbeeld, hij veranderde alleen some in every:
+const allAdults = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
+console.log({allAdults});
+
+Find. Lijkt op filter, maar ipv een subset van array, geeft ie terug de eerste die die vindt.
+De eerste die true is in dit geval.
+
+findIndex. Geeft hoeveelste het is van wat ie (als eerste, denk ik) vindt. Die kun je dan
+bewerken. In dit geval met splice(index, 1);
+
+---
+
+aantekeningen:
+array.indexOf()
+if niet found, return -1.
