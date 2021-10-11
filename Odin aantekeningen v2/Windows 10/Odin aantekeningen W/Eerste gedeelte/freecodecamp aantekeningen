@@ -680,3 +680,14 @@ Eerste trucje:
 <h4></h4><span>Blog nav</span><h4></h4>
 Dit betekent een deel van de opmaak zoals de ruimtes, van h4 (zowel boven (de eerste), als onder (de
 tweede)), maar niet dikgedrukt. haha.
+
+labels zijn inline elementen en daarom werkt width "dus" niet:
+je kunt het aanpassen door display: block te doen
+maar je wilt eigenlijk display: inline-block
+dan staan ze namelijk nog wel zoveel naast elkaar als dat mogelijk is, maar kun je ze ook
+width geven.
+En dan misschien nog text-align: center (in mijn geval wel).
+
+Als je iets niet wilt laten wrappen maar door wilt laten lopen ook voorbij de ruimte die het venster biedt (is zo
+simpel als dat het maar kan eigenlijk):
+white-space: nowrap

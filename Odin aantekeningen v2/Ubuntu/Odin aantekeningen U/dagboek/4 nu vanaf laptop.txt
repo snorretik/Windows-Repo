@@ -1,0 +1,66 @@
+Oké, ik zit nu een keertje op de laptop!
+
+Ik heb wat tijd, ongeveer. Een uurtje tot dat ik me ga voorbereiden op het avondeten in ieder geval. Ik kwam net
+thuis van Boekenwerk en het leek een gewoonte om mijn computer aan te zetten, en ik dacht ik ga het eens
+beperken tot mijn laptop. Wat "light-weight", want het laptopje is ook leuk toch? Het kan inmiddels, ik heb het
+gisteren allemaal geregeld dat moeiteloos vanuit één van mijn Windows systemen of Ubuntu kan worden gewerkt.
+
+Ik heb dus in feite kunnen vinden hoe ik dit moet implementeren, ik vraag me dus af hoe lang dit nog gaat duren
+totdat ik het feitelijk werkende heb gekregen.
+
+Het zal niet zo moeilijk meer zijn. Onderdeel daarvan was een bookmark in firefox bij "programmeren". Ik zal hem
+er eens bij pakken.
+
+Oké, ik heb hem open staan.
+
+Nou ben ik tegelijkertijd aan het kijken wat voor een kleine aanpassingen er nog voor nodig zijn om het visueel
+mogelijk te maken, want ik wil eigenlijk ook wel gebruik maken van zo'n fade-wit effect om ze te laten
+verdwijnen links en rechts. En ja ik doe alles in met borders aangegeven elementen. Maar ik zie dat bijna nooit
+ergens anders. Op andere plekken gebruiken ze de volledig beschikbare ruimte zonder kaderingen, grappig genoeg.
+Is wel interessant.
+
+Ja misschien moet ik beginnen met hoe ik dingen in positie zet, verder buiten het beschikbare venster. Dat heb
+ik wel in 1 van mijn aantekeningen nog staan.
+
+Hier moet ik toch langer over doen, ik denk dat dit moeizame stapjes gaan worden. Zie het nog niet 1 2 3
+gebeuren.
+
+Dus ik weet niet hoe ver ik nu dan nog kom, misschien inderdaad nog wat meer onderzoek. That's it.
+
+Ha leuk, de nowrap heb ik meteen al te pakken, haha.
+
+De border... ik zit te klooien ermee en krijg het niet meteen zoals ik wil, nog niet. Zit me daarom af te vragen
+of hij de moeite waard is om te proberen te behouden want ja... hij is niet noodzakelijk. Zie hem op andere
+plekken ook niet/nauwelijks gebruikt worden.
+
+-
+
+Pa is net even langsgeweest, hij kwam eigenlijk voor die film! Haha, leuk! Hij zei ik ga nu even boodschappen
+doen, maar dan kan jij hem op USB zetten en dan kan ik hem zien. Hij had vanavond niets bijzonders op de planning
+staan.
+
+Dus gedaan. Vroeg me af of ik in die tijd ondertiteling kon regelen. Maar heb ik niet kunnen uitvogelen voordat
+hij terug was.
+
+Dus ja, maar hij heeft hem nu wel. Ik ben benieuwd, haha. Ik vind hem echt vet. Ik heb hem meteen weer aangezet.
+Nu net pas afgekeken, anderhalf uur duurt ie.
+
+Ik vind het een heel bijzonder ding.
+
+Maar nu hoop ik toch nog even verder te kunnen, ik vind het eigenlijk wel leuk. Misschien duurt het helemaal niet
+zo lang, misschien weer wel. Maar ik draag het nou even over op de gewone computer nu die toch aan staat.
+
+Kan via cloud gewoon, en dan 1 keer pushen, dat is genoeg. Prima. Sounds like a plan.
+
+Maar het is ook echt leuk om op de laptop te werken. En met een 500gb SSD misschien nog fijner, maar eigenlijk
+nu al hoor. Het is helemaal niet zo vervelend. Het is nog steeds een "gewone" computer. Niet met die snelheid,
+maar hij doet het nog even goed! Prima ding. Ben er echt tevreden mee!
+
+-
+
+Oke, dat gaat prima. Tussen windows en windows is er niet veel nodig, gaat allemaal vanzelf. Pas dan weer
+naar Ubuntu, naar moet ik het van te voren al voor hebben gepusht etc.
+
+Oke nou nog wat kleins voor elkaar gekregen, de visuele basis.
+Ik vind het heel leuk! Maar ineens heb ik weer een klap moe. Dus ik hou toch nog even op. Al is het misschien
+maar een momentje, maar goed.
