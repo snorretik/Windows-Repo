@@ -1,0 +1,49 @@
+Oke nou,
+
+Ik heb vanochtend weer het voornemen gekregen om aan de slag te gaan vandaag.
+Onder de noemer "werken". Vanwege het liedje "Work It", niet voor niks meerdere malen afgespeeld gisteren denk ik. Maar goed het heeft me dus gepakt uiteindelijk, van "ik moet gewoon gaan werken". Sowieso werk, ook al is het misschien nu nog niet betaald. Gewoon bezig blijven.
+Dan heb ik net nog een tool/programma gevonden om mijn vensterindelingen beter te kunnen bewerken. Zodat de vensterverdelingen ook praktisch zijn voor bijvoorbeeld mijn tweede scherm (met een indeling van bovenkant/onderkant ipv alleen maar het standaard links/rechts).
+
+Dat is echt heel handig!
+
+Weer een leuk programmatje ontdekt.
+
+Maar nu?
+
+Nu moet ik toch echt aan de slag vind ik.
+Genoeg afleidingen gehad.
+
+Even opbreken waar ik ook alweer mee bezig was.
+
+Het was de laatste stap volgens mij voordat ik kon implementeren wat ik wilde. Het was alleen nog maar even "uitvoeren".
+
+Dus? Dan ga ik dat toch doen? Even kijken, misschien zijn mijn bladwijzers de laatste aanwijzingen geweest.
+
+Nee, kut. Ik moet even pauze hebben. Toch. Ik weet niet goed waar ik moet beginnen!
+
+-
+
+Tonic gepakt, en muziek even afgelaten. Zit nu video te kijken die ik als laatste heb gebookmarked over mousemove. Maar ik ben moe. Echt waar! Ik ben moe. Echt waar.
+Ik kan het even niet...
+Ik moet even rusten of liggen of whatever, ik weet niet voor hoe lang.
+
+Maar ik heb wel dat ik doordat deze vensterindelingen nou mooi aansluiten, dat ik het gevoel heb...
+Ja heel gek.
+Alsof ik dan genoeg gefocust ben om geen muziek meer nodig te hebben. Het voelt al georganiseerd genoeg of zo (alsof het daar dan voor nodig zou zijn, nee... maar goed).
+
+Nou ben ik ineens weer niet moe. Nu weer wel.
+
+-
+
+Oké, nou even uitgerust. Ook niet te lang eigenlijk, misschien 40 minuutjes. Dat vind ik niet lang aangezien ik vroeger soms hele dagdelen zo doorstreepte. Nu niet.
+
+En ja, ik zit dus opnieuw nog even te kijken: het zou vanuit hier heel simpel moeten zijn.
+
+Tja, dus hoe lang wil ik hier over doen???? Waarschijnlijk is het gewoon héél straightforward. Maar toch haha, schijnbaar is het een drempeltje of zo. Toch nog.
+Hoe ga ik dit doen?
+
+Ja, muis ingedrukt (houden) op element. Dus een while waarschijnlijk. En dan de beweging, that's it lol. Haha.
+
+Ja, nou... eerst het element "pakken". In javascript dus. Oké, dat is toch nog een tussenstap. Dus.
+
+

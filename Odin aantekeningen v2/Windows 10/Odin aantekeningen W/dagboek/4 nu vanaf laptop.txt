@@ -1,4 +1,4 @@
-OkÃ©, ik zit nu een keertje op de laptop!
+Oké, ik zit nu een keertje op de laptop!
 
 Ik heb wat tijd, ongeveer. Een uurtje tot dat ik me ga voorbereiden op het avondeten in ieder geval. Ik kwam net
 thuis van Boekenwerk en het leek een gewoonte om mijn computer aan te zetten, en ik dacht ik ga het eens
@@ -11,7 +11,7 @@ totdat ik het feitelijk werkende heb gekregen.
 Het zal niet zo moeilijk meer zijn. Onderdeel daarvan was een bookmark in firefox bij "programmeren". Ik zal hem
 er eens bij pakken.
 
-OkÃ©, ik heb hem open staan.
+Oké, ik heb hem open staan.
 
 Nou ben ik tegelijkertijd aan het kijken wat voor een kleine aanpassingen er nog voor nodig zijn om het visueel
 mogelijk te maken, want ik wil eigenlijk ook wel gebruik maken van zo'n fade-wit effect om ze te laten
@@ -59,7 +59,7 @@ maar hij doet het nog even goed! Prima ding. Ben er echt tevreden mee!
 -
 
 Oke, dat gaat prima. Tussen windows en windows is er niet veel nodig, gaat allemaal vanzelf. Pas dan weer
-naar Ubuntu, naar moet ik het van te voren al voor hebben gepusht etc.
+naar Ubuntu, daar moet ik het van te voren al voor hebben gepusht etc.
 
 Oke nou nog wat kleins voor elkaar gekregen, de visuele basis.
 Ik vind het heel leuk! Maar ineens heb ik weer een klap moe. Dus ik hou toch nog even op. Al is het misschien
