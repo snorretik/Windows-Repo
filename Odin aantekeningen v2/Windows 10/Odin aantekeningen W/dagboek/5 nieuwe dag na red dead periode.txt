@@ -46,4 +46,7 @@ Ja, muis ingedrukt (houden) op element. Dus een while waarschijnlijk. En dan de 
 
 Ja, nou... eerst het element "pakken". In javascript dus. Oké, dat is toch nog een tussenstap. Dus.
 
-
+Oké nou, ik blijk er inderdaad toch even "uit" te zijn. Ik moet wéér up to speed komen. Ik zit nou te denken aan gewoon de meest standaard functie. En ik kan het op het eerste gezicht niet zo duidelijk in mijn aantekeningen terug vinden als dat ik dacht. Nou ja.
+Maar ik gebruikte ook vaak voorbeelden van mijn vorige projecten van "oh ja, zo zag dat eruit" etc etc.
+Prima.
+Doe ik even.

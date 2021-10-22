@@ -182,3 +182,42 @@ Static methods bestaan ook, die gelden voor de classe zelf ipv de instantie.
 
 En dan get en set. Met get kan je static methods ook gebruiken alsof het properties zijn,
 omdat dat eigenlijk nog niet bestaat. En dan moet je iets gebruiken genaamd Babel.
+
+---
+
+Oke.
+
+Ik ben nog steeds hier. Maar dan voor modules. Heb ik niet meegeschreven dus moet ik nu
+misschien alsnog doen.
+
+Het was veel lezen. En uitleg. Niet specifiek code. Maar waarom en etc... 
+
+Eerst de history. Dat was uitleg hoe dingen geëvolueerd zijn.
+
+Dan NPM, dat was al geïnstalleerd in web101-fundamentalspart4. Heb Jasmine niet geïnstalleerd.
+Moest het namelijk overnieuw doen.
+
+
+
+---
+
+Dan een stukje git. De gitignore file. Dat moest ik even opnieuw opzoeken en de bronnen zijn
+veranderd heb ik het idee. Ik zocht uiteindelijk naar tower's. En nu iets gevonden.
+
+Je maakt dus een .gitignore file. Met een naam, weet niet of dat uitmaakt. En dan heb je 4
+snelle situaties.
+- One specific file. Provide the full path to the file seen from the root folder of your
+project.
+path/to/file.ext
+- Ignore all files with a certain name. Just write down the file's name, without giving path.
+filename.ext
+- Ignore all files of a certain type:
+*.ext
+- Ignore all files in a certain folder:
+path/to/folder/*
+
+Dat laatste had ik nodig. Maar in ieder geval.
+
+---
+
+
