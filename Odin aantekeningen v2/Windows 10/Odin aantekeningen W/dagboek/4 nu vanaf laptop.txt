@@ -3,7 +3,7 @@ Oké, ik zit nu een keertje op de laptop!
 Ik heb wat tijd, ongeveer. Een uurtje tot dat ik me ga voorbereiden op het avondeten in ieder geval. Ik kwam net
 thuis van Boekenwerk en het leek een gewoonte om mijn computer aan te zetten, en ik dacht ik ga het eens
 beperken tot mijn laptop. Wat "light-weight", want het laptopje is ook leuk toch? Het kan inmiddels, ik heb het
-gisteren allemaal geregeld dat moeiteloos vanuit Ã©Ã©n van mijn Windows systemen of Ubuntu kan worden gewerkt.
+gisteren allemaal geregeld dat moeiteloos vanuit één van mijn Windows systemen of Ubuntu kan worden gewerkt.
 
 Ik heb dus in feite kunnen vinden hoe ik dit moet implementeren, ik vraag me dus af hoe lang dit nog gaat duren
 totdat ik het feitelijk werkende heb gekregen.

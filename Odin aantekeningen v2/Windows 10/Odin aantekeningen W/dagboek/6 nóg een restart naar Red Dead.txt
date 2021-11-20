@@ -1,0 +1,40 @@
+Oke nou,
+
+Ik heb dus in plaats van het op te hebben gepakt nóg een Red Dead periode gehad.
+
+Maar nu...
+Ik heb het af willen sluiten, en nu ben ik opnieuw gaan nadenken over wat ik wil bereiken.
+Een minimum namelijk.
+Ik wil een minimum aan programmeer-vaardigheden ontwikkelen (ook ontwikkelen, ja) voor webdevelopment.
+
+Ik heb er een beeld bij gekregen nu.
+Ik moet genoeg kennis hebben om bij te kunnen dragen. En vandaaruit ga ik wel verder... we zullen zien.
+
+Dus. Opnieuw nu. Bij Odin, mobile menu.
+
+Dit is waar ik weer ga beginnen.
+Want development is denk ik toch makkelijker en praktischer ook dan cybersecurity (is nou mijn inschatting).
+
+Maar het moet een marathon worden, zit ik nou te denken!
+Het moet een marathon worden in plaats van een dagelijks klein sprintje.
+Ik moet aan de gang blijven wil ik voortgang maken, nondeju!
+Het is nodig.
+
+-
+
+Oké, kom op!!!
+Verdomme zeg, wat is het soms toch lastig om jezelf aan de gang te krijgen.
+Het is denk ik nú weer een drempel, om mezelf bekend te krijgen met de tabbladen waar ik mee bezig ben (of was, liever).
+
+-
+
+Ik snap eigenlijk niet wat het probleem is, het is heel behapbaar in feite. Ik moest het weer er bij pakken, het is de hamburger menu van de "inspiration" link. Nummer 4.
+
+Het is eigenlijk heel simpel.
+Já, qua functionaliteit in ieder geval.
+Zo moeilijk kan dat dan toch ook niet zijn in programmeren?
+Tja. Ik hoop dat het niet lang dúúrt! Want dat is nergens voor nodig! Opbreken nou nog even.
+
+-
+
+Oh ik was in feite al bezig met de events. Ik heb daar al pogingen in gedaan, en daarom staan in mijn tabbladen zoektermen over het instellen en het (weer) verwijderen van de eventlisteners. Dat werkte dus nog niet zo soepel.
