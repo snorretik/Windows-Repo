@@ -3,9 +3,18 @@
 * Multiplication
 / Division
 
+** Exponent
+% Modulus/Remainder
+// Integer Division(wholes only)
+
 Delen wordt float altijd.
 
 ---
+
+Normale string:
+'hello' 
+Lege string:
+''
 
 String
 'Hello' + 'World!' 

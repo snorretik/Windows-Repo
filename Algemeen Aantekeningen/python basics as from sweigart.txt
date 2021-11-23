@@ -1,0 +1,241 @@
+Gedrag:
+
+-------------------
+
+Algemeen:
+
+Code wordt achtereenvolgens uitgevoerd (is wel even wennen na javascript! althans, het ging met functies vooral daar).
+
+-
+
+Variabelen typ je gewoon voor de eerste keer zoals je ze wilt noemen, als je maar iets toewijst aan ze (waarschijnlijk, je zult ze ook specifiek leeg moeten toewijzen bijv.).
+
+-
+
+Python kan wel vergelijken tussen floats en ints en weet wanneer ze gelijkwaardig zijn. En niet met strings en nummers (wat de floats en ints dan in feiten samen zijn).
+Als het niet mogelijk is is het vaak gewoon False.
+
+Sommige waarden worden speciaal bevonden:
+0 is False
+0.0 is False
+'' is False
+
+filled in or 
+not-empty values are all considered True(though)
+
+-
+
+The conditionals and the following blocks (called a clause)
+
+Conditions:
+checks for eventual bools
+
+Code blokken:
+- indented
+- blocks nesten possible
+- blocks end at reset of its indentation
+
+-
+
+
+
+------------------------------------------------------
+
+Feiten:
+
+--------------------
+
+Het schrijven:
+
+-
+
+# hekje voor de comments in Python
+
+-
+
+Naming:
+name a variable and assign it immediately
+spam = 40
+
+- 
+
++ Addition
+- Subtraction
+* Multiplication
+/ Division                   delen wordt float (altijd)
+
+** Exponent
+% Modulus/Remainder
+// Integer Division(wholes only)
+
+-
+
+Comparison:
+==       equal              (en niet als javascript: == en ===)
+!=       not equal
+<        less than
+>        greater than
+<=       less or equal
+>=       greater or equal
+
+(worden Bools dus als antwoorden, of voorwaarden waarsch ook)
+
+-
+
+string:
+normale string
+'hello' 
+lege string
+''
+
+string "calculation"
+'Hello' + 'World!' 
+of 
+'Hello ' + 'World!' 
+of
+'Hello ' + var (moet string zijn)
+
+strings herhalen
+'Hello' * 3 = 'HelloHelloHello'
+
+-
+
+int:
+los getal
+6
+
+-
+
+float:
+altijd met .iets
+1.0
+
+-
+
+Booleans:                 
+True				    # hoofdletter dus
+False
+
+Boolean Operators:
+and                      (helemaal los, geen haakjes of iets)
+or
+not
+
+-
+
+--------------------
+
+Logica:
+
+if statements
+if name == 'Alice':
+	print('Hi, Alice.')
+
+if else statements
+if name == 'Alice':
+	{do}						(no curly braces though)
+else:
+	{do else}
+
+elif statements
+(just replace else with elif, continueing...)
+
+-
+
+while (loop) statements
+while spam < 5:
+	print('something')
+	spam = spam + 1
+
+breaking out of loops keyword
+break
+
+forwarding to start of a loop keyword 
+continue
+
+-
+
+for en range()
+for i in range(5)
+	print(i)
+
+(use of break and continue is limited to while and for only)
+
+range() has more options (up to 3, seperated by a comma)
+these would be:
+range(startNumber, endNumberButNotIncl, stepsAtATimeNumber)
+ 
+daarbij kan hierboven stepsAtATimeNumber ook negatief zijn, zoals negatief -1 om (natuurlijk) af te tellen ipv op te tellen
+
+-
+
+
+
+--------------------
+
+Functies etc:
+
+# prints what's inside
+print()
+
+# input, assigns it to a (string) variable
+input()
+
+# returns the length of a variable/string
+len() 
+
+# 3 functions to convert:
+str()
+int()                         # floats will be rounded down
+float()               	   # ints will get a .0
+
+--------------------
+
+Imports:
+
+First of all, you can import other .py files in your folder for example, that's why you should avoid naming them standard module names like random.py, math.py, sys.py, os.py etc.
+
+import random
+
+import random, sys, os, math           (at once, using comma's)
+
+the from keyword
+from random import *
+(then you can access all parts of random directly without having to call random for them)
+(but "readability" suggests otherwise)
+
+--------------------
+
+Variable names:
+1 woord
+letters, nummers en _ character
+kan niet beginnen met nummer
+
++ CASE SENSITIVE
+
+bEGIN BIJ VOORKEUR lowerCASE
+
+Je hebt een keuze tussen
+- camelcase: elk nieuw woord een enkele nieuwe hoofdletter
+- officieel aanbevolen: onderbroken met under_scores: _ 
+
+---------------------
+
+Modules:
+
+random:
+random.randint(1, 10)
+(I suspect: randint(include, exclude))
+
+sys:
+sys.exit()
+
+---------------------
+
+Voorbeelden:
+
+je kunt not schijnbaar (sowieso) nesten, weet het even niet van de rest:
+not not not True = False
+not not not not True = True
+
+
